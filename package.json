@@ -1,0 +1,24 @@
+{
+  "name": "cursemarket",
+  "version": "1.0.0",
+  "description": "повышаем культуру кодинга в восточной европэ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "yaksil",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/boom": "^9.1.2",
+    "config": "^3.3.3",
+    "express": "^4.17.1",
+    "express-promise-router": "^4.1.0",
+    "mongoose": "^5.11.17",
+    "vue": "^3.0.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
