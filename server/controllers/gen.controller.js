@@ -48,7 +48,7 @@ const genController = (model) => ({
     async delete(req, res) {
         try {
             await model.findByIdAndDelete(req.params.id);
-            return res.status(200).send({ status: "OK", message: "Продукт удален" });
+            return res.status(200).send({ status: "OK", message: "Элемент удален" });
         } catch (err) {
             return res.status(400).send(boom.boomify(err));
         }
