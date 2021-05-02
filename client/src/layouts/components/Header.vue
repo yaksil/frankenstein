@@ -1,4 +1,4 @@
-<!-- господи пиздец блядь наконец-то костыльно всё сделано конечно ну да похуй главное работает ага да -->
+<!-- господи пиздец блядь наконец-то -->
 <template>
   <header class="lg:container mx-auto mt-5 flex justify-between">
     <div class="inline-block">
@@ -9,7 +9,9 @@
     <div class="inline-block place-content-end">
       <ul class="pt-1.5 font-yeseva text-black inline-flex">
         <li class="list-elem mr-10">
-          <a href="#">faq</a>
+          <a href="#">
+            faq
+          </a>
         </li>
         <li class="list-elem">
           <a href="#">
