@@ -34,25 +34,21 @@ export default {
 }
 
 .cvrse {
-  font-family: Elephant, monospace;
-  font-size: 1.8em;
-  color: black;
-  padding-left: 20px;
-  padding-top: 10px;
+  @apply font-curse text-3xl text-black pt-2 pl-10
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding-right: 10px;
+  padding-right: 50px;
 }
 
 ul li {
   font-family: "Yeseva One", monospace;
   font-size: 1.2em;
   list-style: none;
-  padding-right: 10px;
+  padding-right: 20px;
   display: inline-flex;
 }
 </style>

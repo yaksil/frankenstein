@@ -11,6 +11,11 @@ const product = new mongoose.Schema({
         ref: 'Category'
     },
     images: [String], //array of paths i guess
+    mainImage: {
+        type: String,
+        required: true,
+        default: ''
+    },
     description: {
         type: String,
         default: '',
