@@ -9,7 +9,7 @@
 export default {
   name: 'App',
   components: {
-    Header: () => import("@/layouts/Header"),
+    Header: () => import("@/layouts/components/Header"),
   }
 }
 </script>
