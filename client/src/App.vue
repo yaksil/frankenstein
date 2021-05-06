@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <Header />
-
+    <Home />
   </div>
 </template>
 
@@ -10,7 +9,7 @@
 export default {
   name: 'App',
   components: {
-    Header: () => import("@/layouts/components/Header"),
+    Home: () => import('@/views/Home')
   }
 }
 </script>

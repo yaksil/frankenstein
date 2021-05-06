@@ -1,19 +1,29 @@
 <template>
 <div class="home">
+  <Header />
+  <div class="pl-10">
 
+  </div>
 </div>
 </template>
 
 <script>
 
-import {mapGetters, mapActions} from 'vuex';
+import Header from "@/layouts/components/cvrse-header";
 
 export default {
   name: "Home",
   components: {
+    Header
+  },
+  mounted() {
+
   },
   computed: {
-    ...mapGetters
+
+  },
+  methods: {
+
   }
 }
 </script>

@@ -2,18 +2,18 @@
 <template>
   <header class="lg:container mx-auto mt-5 flex justify-between">
     <div class="inline-block">
-      <div class="font-curse text-3xl text-black">
+      <div class="font-curse text-3xl text-black hover:text-curse-red">
         <a href="#">cvrse</a>
       </div>
     </div>
     <div class="inline-block place-content-end">
       <ul class="pt-1.5 font-yeseva text-black inline-flex">
-        <li class="list-elem mr-10">
+        <li class="list-elem mr-10 hover:text-curse-green">
           <a href="#">
             faq
           </a>
         </li>
-        <li class="list-elem">
+        <li class="list-elem hover:text-curse-green">
           <a href="#">
             поиск
           </a>

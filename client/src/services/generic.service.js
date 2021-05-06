@@ -10,5 +10,6 @@ const API_URL = 'https://localhost:3000/api'
  * @returns {Promise<*>}
  */
 export const request = async ({ url, method, data = {} }) => {
-    return await axios[method](`${API_URL}/${url}`, data)
+    const response = await axios[method](`${API_URL}/${url}`, data)
+    return response
 };
