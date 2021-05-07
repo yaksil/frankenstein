@@ -1,19 +1,23 @@
 <template>
-<div class="home">
-  <Header />
-  <div class="pl-10">
-
+  <div class="home">
+  <section id="header">
+    <Header />
+  </section>
+  <section id="page">
+    <ArtisanSidebar />
+  </section>
   </div>
-</div>
 </template>
 
 <script>
 
 import Header from "@/layouts/components/cvrse-header";
+import ArtisanSidebar from "@/layouts/components/artisan-sidebar"
 
 export default {
   name: "Home",
   components: {
+    ArtisanSidebar,
     Header
   },
   mounted() {
