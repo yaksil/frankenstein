@@ -9,8 +9,8 @@ module.exports = {
         'roboto': ['Roboto', 'serif'],
       },
       colors: {
-        'curse-red': '#B44545',
-        'curse-green': '#219589'
+        'cvrse-red': '#B44545',
+        'cvrse-green': '#219589'
       }
     },
   },

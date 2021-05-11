@@ -4,7 +4,7 @@
     <Header />
   </section>
   <section id="page">
-    <ArtisanSidebar />
+   <FAQ/>
   </section>
   </div>
 </template>
@@ -12,12 +12,12 @@
 <script>
 
 import Header from "@/layouts/components/cvrse-header";
-import ArtisanSidebar from "@/layouts/components/artisan-sidebar"
+import FAQ from "@/views/FAQ"
 
 export default {
   name: "Home",
   components: {
-    ArtisanSidebar,
+    FAQ,
     Header
   },
   mounted() {

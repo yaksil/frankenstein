@@ -5,9 +5,16 @@
 @layer components {
     .cvrsebtn {
         @apply font-yeseva text-white
-        bg-curse-green border-none rounded-full py-1.5 px-5
+        bg-cvrse-green border-none rounded-full py-1.5 px-5
+        transition delay-100 hover:bg-cvrse-red
+    }
+    .cvrseBigBadText {
+        @apply font-yeseva text-3xl text-black
     }
     .cvrseFlavorText {
-
+        @apply font-roboto text-black font-light
+    }
+    .cvrseInfoText {
+        @apply font-roboto text-black font-bold
     }
 }
