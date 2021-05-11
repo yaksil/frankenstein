@@ -1,24 +1,27 @@
 <template>
   <div class="home">
-  <section id="header">
-    <Header />
-  </section>
-  <section id="page">
-   <FAQ/>
-  </section>
+    <section id="header">
+      <cvrse-header />
+    </section>
+    <section id="page">
+
+    </section>
+    <section id="footer">
+      <cvrse-footer />
+    </section>
   </div>
 </template>
 
 <script>
 
-import Header from "@/layouts/components/cvrse-header";
-import FAQ from "@/views/FAQ"
+import CvrseFooter from "@/layouts/components/cvrse-footer";
+import CvrseHeader from "@/layouts/components/cvrse-header";
 
 export default {
   name: "Home",
   components: {
-    FAQ,
-    Header
+    CvrseHeader,
+    CvrseFooter,
   },
   mounted() {
 
