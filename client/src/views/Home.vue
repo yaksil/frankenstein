@@ -4,7 +4,8 @@
       <cvrse-header />
     </section>
     <section id="page">
-
+      <artisan-sidebar />
+      <artisan-inventory />
     </section>
     <section id="footer">
       <cvrse-footer />
@@ -16,10 +17,14 @@
 
 import CvrseFooter from "@/layouts/components/cvrse-footer";
 import CvrseHeader from "@/layouts/components/cvrse-header";
+import ArtisanSidebar from "@/layouts/components/artisan-sidebar"
+import ArtisanInventory from "@/layouts/components/artisan-inventory"
 
 export default {
   name: "Home",
   components: {
+    ArtisanInventory,
+    ArtisanSidebar,
     CvrseHeader,
     CvrseFooter,
   },

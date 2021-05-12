@@ -1,6 +1,6 @@
 <template>
   <footer class="cvrse-footer">
-    <p class="copyright">blessed be</p>
+    <p class="copyright">★ благословенны будьте ★</p>
   </footer>
 </template>
 
@@ -12,8 +12,12 @@ name: "cvrse-footer"
 
 <style scoped>
 .cvrse-footer {
-  padding:40px 0;
-  @apply font-curse text-base bg-white bg-black
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  @apply
+  font-yeseva text-base bg-white bg-black
+  py-3
 }
 .cvrse-footer .copyright {
   margin-top:15px;

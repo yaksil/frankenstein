@@ -19,7 +19,8 @@ name: "artisan-sidebar.vue"
 
 <style scoped>
 .artisan-sidebar {
-  @apply flex flex-col fixed overflow-y-auto right-0 w-1/4 px-10 border-l-2 border-black h-full text-left
+  @apply container
+  flex flex-col fixed overflow-y-auto right-0 w-1/4 px-10 border-l-2 border-black h-full text-left
   pt-12
 }
 @layer components {
