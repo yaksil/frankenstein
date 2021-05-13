@@ -33,5 +33,12 @@ export default {
 </script>
 
 <style scoped>
-
+.product-card {
+  @apply w-1/5
+  flex-row
+  mx-auto
+  border-black border-2
+  justify-between
+  my-0.5
+}
 </style>
