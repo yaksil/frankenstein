@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const product = new mongoose.Schema({
+const simpleProduct = new mongoose.Schema({
     title: {
         type: String,
         default: '',
@@ -19,4 +19,4 @@ const product = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model("Product", product, 'Products');
+module.exports = mongoose.model("SimpleProduct", simpleProduct, 'SimpleProducts');
