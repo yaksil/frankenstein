@@ -1,14 +1,16 @@
 const config = require('config');
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const {routes} = require('./server/routes/_index')
 
 const app = express();
-const port = config.get('port') || 3000;
+const port = config.get('port') || 4545;
 
 // connect
 async function start() {
+    app.use(cors());
     try {
         await mongoose.connect(config.get('mongoUri'), {
             useNewUrlParser: true,

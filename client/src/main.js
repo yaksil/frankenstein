@@ -10,6 +10,7 @@ Vue.use(Vuex);
 new Vue({
   store: Store,
   modules: {
+
   },
   render: h => h(App),
 }).$mount('#app')

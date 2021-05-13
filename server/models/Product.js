@@ -26,19 +26,15 @@ const product = new mongoose.Schema({
         ref: 'Artisan',
         required: true
     },
-    retail: {
-        price: Number,
-        in_stock: Number,
-    },
-    ratings: {
-        reviews: [{
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Review'
-        }],
-        stars: {
-            type: Number,
-            default: 0
-        }
+    price: Number,
+    in_stock: Number,
+    reviews: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Review'
+    }],
+    stars: {
+        type: Number,
+        default: 0
     },
     available: {
         type: Boolean,

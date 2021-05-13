@@ -1,10 +1,8 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-
-import * as product from '@/store/product.store'
+import product from '@/store/product'
 
 Vue.use(Vuex);
-
 export default new Vuex.Store({
     modules: {
         product

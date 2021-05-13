@@ -13,14 +13,12 @@
       />
     </section>
     <section id="footer">
-      <cvrse-footer />
     </section>
   </div>
 </template>
 
 <script>
 
-import CvrseFooter from "@/layouts/components/cvrse-footer";
 import CvrseHeader from "@/layouts/components/cvrse-header";
 import ProductCard from "@/layouts/components/product-card";
 
@@ -31,20 +29,15 @@ export default {
   components: {
     ProductCard,
     CvrseHeader,
-    CvrseFooter,
   },
   mounted() {
     this.fetchProducts();
   },
   computed: {
-    ...mapGetters ([
-        'product/products'
-    ])
+    ...mapGetters (['products'])
   },
   methods: {
-    ...mapActions({
-      fetchProducts: 'product/fetchProducts'
-    })
+    ...mapActions(['fetchProducts'])
   },
 }
 </script>
