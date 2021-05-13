@@ -12,7 +12,7 @@ name: "cvrse-footer"
 
 <style scoped>
 .cvrse-footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
   @apply

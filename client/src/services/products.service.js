@@ -1,8 +1,8 @@
 import {request} from "@/services/generic.service";
 
-const getProduct = (id) => request({url : `c/${id}`, method: 'get'})
+const getProduct = (id) => request({url : `p/${id}`, method: 'get'})
 
-const getProducts = () => request({url : `c/`, method: 'get'})
+const getProducts = () => request({url : `p/`, method: 'get'})
 
 export {
     getProduct,

@@ -4,8 +4,13 @@
       <cvrse-header />
     </section>
     <section id="page">
-      <artisan-sidebar />
-      <artisan-inventory />
+      <product-card v-for="(product, key) in products"
+                    :key="key"
+                    :title="product.title"
+                    :price="product.price"
+                    :mainImage="product.mainImage"
+                    :description="product.description"
+      />
     </section>
     <section id="footer">
       <cvrse-footer />
@@ -17,26 +22,30 @@
 
 import CvrseFooter from "@/layouts/components/cvrse-footer";
 import CvrseHeader from "@/layouts/components/cvrse-header";
-import ArtisanSidebar from "@/layouts/components/artisan-sidebar"
-import ArtisanInventory from "@/layouts/components/artisan-inventory"
+import ProductCard from "@/layouts/components/product-card";
+
+import {mapGetters, mapActions} from 'vuex';
 
 export default {
   name: "Home",
   components: {
-    ArtisanInventory,
-    ArtisanSidebar,
+    ProductCard,
     CvrseHeader,
     CvrseFooter,
   },
   mounted() {
-
+    this.fetchProducts();
   },
   computed: {
-
+    ...mapGetters ([
+        'product/products'
+    ])
   },
   methods: {
-
-  }
+    ...mapActions({
+      fetchProducts: 'product/fetchProducts'
+    })
+  },
 }
 </script>
 
