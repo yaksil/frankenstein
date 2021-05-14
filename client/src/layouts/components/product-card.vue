@@ -33,12 +33,22 @@ export default {
 </script>
 
 <style scoped>
-.product-card {
-  @apply w-1/5
-  flex-row
-  mx-auto
-  border-black border-2
-  justify-between
-  my-0.5
+@layer components {
+  .product-image {
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+  }
+  .product-card {
+    width: 210px;
+    height: 210px;
+    margin-top: 50px;
+  }
+  .product-title {
+    @apply font-roboto font-black
+  }
+  .product-price {
+    @apply font-yeseva text-base
+  }
 }
 </style>

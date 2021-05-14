@@ -33,6 +33,7 @@ const actions = {
             commit('setProductsError', err);
         }
     },
+
 }
 
 const getters = {

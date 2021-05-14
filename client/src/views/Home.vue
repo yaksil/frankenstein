@@ -4,13 +4,7 @@
       <cvrse-header />
     </section>
     <section id="page">
-      <product-card v-for="(product, key) in products"
-                    :key="key"
-                    :title="product.title"
-                    :price="product.price"
-                    :mainImage="product.mainImage"
-                    :description="product.description"
-      />
+      <artisan-inventory />
     </section>
     <section id="footer">
     </section>
@@ -20,25 +14,15 @@
 <script>
 
 import CvrseHeader from "@/layouts/components/cvrse-header";
-import ProductCard from "@/layouts/components/product-card";
-
-import {mapGetters, mapActions} from 'vuex';
+import ArtisanInventory from "@/layouts/components/artisan-inventory"
 
 export default {
   name: "Home",
   components: {
-    ProductCard,
+    ArtisanInventory,
     CvrseHeader,
   },
-  mounted() {
-    this.fetchProducts();
-  },
-  computed: {
-    ...mapGetters (['products'])
-  },
-  methods: {
-    ...mapActions(['fetchProducts'])
-  },
+
 }
 </script>
 

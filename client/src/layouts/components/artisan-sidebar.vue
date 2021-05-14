@@ -13,14 +13,28 @@
 
 <script>
 export default {
-name: "artisan-sidebar.vue"
+  name: "artisan-sidebar.vue",
+  props: {
+    name: {
+
+    },
+    avatar: {
+
+    },
+    location: {
+
+    },
+    description: {
+
+    }
+  }
 }
 </script>
 
 <style scoped>
 .artisan-sidebar {
-  @apply container
-  flex flex-col fixed overflow-y-auto right-0 w-1/4 px-10 border-l-2 border-black h-full text-left
+  @apply container bg-white
+  flex flex-col fixed overflow-y-auto right-0 w-1/4 px-10 h-full text-left
   pt-12
 }
 @layer components {
