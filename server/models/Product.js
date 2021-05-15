@@ -6,7 +6,7 @@ const product = new mongoose.Schema({
         default: '',
     },
     category: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: String,
         ref: 'Category'
     },
     images: [String], //array of paths i guess

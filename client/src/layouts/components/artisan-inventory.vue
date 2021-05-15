@@ -35,6 +35,13 @@ export default {
     ArtisanSidebar,
     ProductCard,
   },
+  props: {
+    // TODO passing artisan id as a prop
+    // artisan id
+    _id: {
+      type: String
+    }
+  },
   mounted() {
     //pass props from some other page idk
     this.fetchInventory();
@@ -55,8 +62,8 @@ export default {
     ]),
 
     async fetchInventory () {
-      await this.fetchArtisan("609ed4202e9d5026d8b72e42"); // хуйня параша панки хой победа наша
-      await this.fetchProductsByArtisan(this.artisan._id);
+      await this.fetchArtisan(this._id); // хуйня параша панки хой победа наша
+      await this.fetchProductsByArtisan(this._id);
     },
   },
 }
