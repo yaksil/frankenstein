@@ -13,6 +13,5 @@ router.route("/").get(product.getAll);
 router.route("/:id").put(product.updateById);
 router.route("/:id").delete(product.delete);
 // additional functions from the happy house
-router.route("/rt").get(product.getByArtisan);
 
 module.exports = router;

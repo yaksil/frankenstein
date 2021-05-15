@@ -10,7 +10,8 @@
     />
   <div class="artisan-inventory">
     <product-card
-        v-if="product.length !== 0"
+        v-for="(product, key) in products"
+        :key="key"
         :title="product.title"
         :price="product.price + '₽'"
         :mainImage="product.mainImage"
@@ -32,22 +33,27 @@ export default {
     ProductCard,
   },
   mounted() {
-    //this.fetchArtisan("609ed4202e9d5026d8b72e42"); // props from ugh some other page i guess
+    //pass props from some other page idk
     this.fetchInventory();
   },
   computed: {
     ...mapGetters ([
       'product',
-      'artisan']),
+      'products',
+      'artisan'
+    ]),
   },
   methods: {
     ...mapActions([
+      'fetchArtisan',
       'fetchProduct',
-      'fetchArtisan']),
+      'fetchProducts',
+    ]),
 
     async fetchInventory () {
       await this.fetchArtisan("609ed4202e9d5026d8b72e42"); // хуйня параша панки хой победа наша
-      console.log(this.artisan.inventory);
+      const array = this.artisan.inventory;
+      console.log(array);
     },
   },
 }
