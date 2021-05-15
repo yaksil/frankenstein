@@ -28,13 +28,11 @@ const actions = {
     async fetchProducts({commit}) {
         try {
             const products = await getProducts();
-            console.log(products);
             commit('setProducts', products);
         } catch (err) {
             commit('setProductError', err);
         }
     },
-
 }
 
 const getters = {

@@ -2,15 +2,22 @@ const config = require('config');
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const { queryParser } = require('express-query-parser')
 
 const {routes} = require('./server/routes/_index')
 
 const app = express();
+app.use(
+    queryParser({
+        parseNull: true,
+        parseBoolean: true
+    })
+)
 const port = config.get('port') || 4545;
 
 // connect
 async function start() {
-    app.use(cors());
+   app.use(cors());
     try {
         await mongoose.connect(config.get('mongoUri'), {
             useNewUrlParser: true,
