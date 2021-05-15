@@ -32,13 +32,13 @@ export default {
     ProductCard,
   },
   mounted() {
-    this.fetchArtisan("609ed4202e9d5026d8b72e42"); // props from uuuugh some other page i guess
+    //this.fetchArtisan("609ed4202e9d5026d8b72e42"); // props from ugh some other page i guess
     this.fetchInventory();
   },
   computed: {
     ...mapGetters ([
       'product',
-      'artisan'])
+      'artisan']),
   },
   methods: {
     ...mapActions([
@@ -46,7 +46,8 @@ export default {
       'fetchArtisan']),
 
     async fetchInventory () {
-
+      await this.fetchArtisan("609ed4202e9d5026d8b72e42"); // хуйня параша панки хой победа наша
+      console.log(this.artisan.inventory);
     },
   },
 }
