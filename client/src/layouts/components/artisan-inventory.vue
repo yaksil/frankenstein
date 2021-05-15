@@ -2,6 +2,7 @@
   <div class="artisan-info">
     <artisan-sidebar
         v-if="artisan.length !== 0"
+        :_id="artisan._id"
         :name="artisan.name"
         :location="artisan.location"
         :description="artisan.description"
@@ -52,8 +53,8 @@ export default {
 
     async fetchInventory () {
       await this.fetchArtisan("609ed4202e9d5026d8b72e42"); // хуйня параша панки хой победа наша
-      const array = this.artisan.inventory;
-      console.log(array);
+      const key = this.artisan._id;
+      console.log(key);
     },
   },
 }

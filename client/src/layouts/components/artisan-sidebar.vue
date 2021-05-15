@@ -15,6 +15,9 @@
 export default {
   name: "artisan-sidebar.vue",
   props: {
+    _id: {
+      type: String,
+    },
     name: {
       type: String,
       default: ''
