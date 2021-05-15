@@ -1,12 +1,12 @@
 <template>
   <div class="artisan-sidebar">
     <div class="avatar">
-      <img :src="require('@/assets/tempAvatar.jpg')" alt="missing?">
+      <img :src="avatar" alt="missing?">
     </div>
-    <p class="cvrseBigBadText pt-2">green_man88</p>
+    <p class="cvrseBigBadText pt-2">{{ name }}</p>
     <p class="cvrseInfoText pt-1">мастер</p>
-    <p class="cvrseInfoText">Москва, Россия</p>
-    <p class="artisan-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vulputate ex nec nisi pulvinar, ac ultrices leo fringilla. Maecenas enim turpis, pulvinar in bibendum ut, egestas vitae arcu. Vestibulum vitae ligula in nibh iaculis facilisis. Etiam ullamcorper ipsum non enim bibendum, nec mollis ipsum pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vulputate ex nec nisi pulvinar, ac ultrices leo fringilla.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vulputate ex nec nisi pulvinar, ac ultrices leo fringilla.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vulputate ex nec nisi pulvinar, ac ultrices leo fringilla.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vulputate ex nec nisi pulvinar, ac ultrices leo fringilla.</p>
+    <p class="cvrseInfoText">{{ location }}</p>
+    <p class="artisan-bio">{{description}}</p>
     <button class="artisan-contact">связаться</button>
   </div>
 </template>
@@ -16,16 +16,23 @@ export default {
   name: "artisan-sidebar.vue",
   props: {
     name: {
-
+      type: String,
+      default: ''
     },
     avatar: {
-
+      type: String,
+      default: ''
     },
     location: {
-
+      type: String,
+      default: ''
     },
     description: {
-
+      type: String,
+      default: ''
+    },
+    inventory: {
+      type: Array
     }
   }
 }
@@ -41,10 +48,10 @@ export default {
   .avatar {
     width: 200px;
     height: 200px;
-    border-radius: 100%;
-    overflow: hidden;
+    object-fit: cover;
     position: relative;
-    @apply border-2 border-black justify-between
+    overflow: hidden;
+    border-radius: 50%;
   }
   .artisan-bio {
     @apply font-roboto text-black font-light

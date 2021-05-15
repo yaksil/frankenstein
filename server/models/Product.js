@@ -18,10 +18,6 @@ const product = new mongoose.Schema({
         type: String,
         default: '',
     },
-    artisan: {
-        type: mongoose.Schema.Types.ObjectId, //references artisan? represents a store basically
-        ref: 'Artisan',
-    },
     price: {
         type: Number,
         default: 0,

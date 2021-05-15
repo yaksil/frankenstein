@@ -20,7 +20,11 @@ const artisan = new mongoose.Schema({
     description: {
         type: String,
         default: ''
-    }
+    },
+    inventory: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Product'
+    }]
 })
 
 module.exports = mongoose.model("Artisan", artisan, 'Artisans');

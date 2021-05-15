@@ -4,7 +4,7 @@
       <cvrse-header />
     </section>
     <section id="page">
-      <artisan-inventory />
+      <artisan-inventory/>
     </section>
     <section id="footer">
     </section>

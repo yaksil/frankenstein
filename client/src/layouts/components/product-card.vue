@@ -21,8 +21,8 @@ export default {
       default: ''
     },
     price: {
-      type: Number,
-      default: 0
+      type: String,
+      default: ''
     },
     description: {
       type: String,
@@ -45,7 +45,7 @@ export default {
     margin-top: 50px;
   }
   .product-title {
-    @apply font-roboto font-black
+    @apply font-roboto font-medium
   }
   .product-price {
     @apply font-yeseva text-base

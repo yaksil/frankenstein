@@ -1,12 +1,16 @@
 <template>
   <div class="artisan-info">
     <artisan-sidebar
-
+        v-if="artisan.length !== 0"
+        :name="artisan.name"
+        :location="artisan.location"
+        :description="artisan.description"
+        :avatar="artisan.avatar"
+        :inventory="artisan.inventory"
     />
   <div class="artisan-inventory">
     <product-card
-        v-for="(product, key) in products"
-        :key="key"
+        v-if="product.length !== 0"
         :title="product.title"
         :price="product.price + '₽'"
         :mainImage="product.mainImage"
@@ -28,13 +32,22 @@ export default {
     ProductCard,
   },
   mounted() {
-    this.fetchProducts();
+    this.fetchArtisan("609ed4202e9d5026d8b72e42"); // props from uuuugh some other page i guess
+    this.fetchInventory();
   },
   computed: {
-    ...mapGetters (['products'])
+    ...mapGetters ([
+      'product',
+      'artisan'])
   },
   methods: {
-    ...mapActions(['fetchProducts'])
+    ...mapActions([
+      'fetchProduct',
+      'fetchArtisan']),
+
+    async fetchInventory () {
+
+    },
   },
 }
 </script>
