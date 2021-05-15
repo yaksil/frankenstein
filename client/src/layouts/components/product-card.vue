@@ -12,6 +12,10 @@
 export default {
   name: "product-card.vue",
   props: {
+    _id: {
+      type: String,
+      default: ''
+    },
     title: {
       type: String,
       default: ''

@@ -13,6 +13,7 @@
     <product-card
         v-for="(product, key) in products"
         :key="key"
+        :_id="product._id"
         :title="product.title"
         :price="product.price + '₽'"
         :mainImage="product.mainImage"
@@ -49,12 +50,12 @@ export default {
       'fetchArtisan',
       'fetchProduct',
       'fetchProducts',
+      'fetchProductsByArtisan'
     ]),
 
     async fetchInventory () {
       await this.fetchArtisan("609ed4202e9d5026d8b72e42"); // хуйня параша панки хой победа наша
-      const key = this.artisan._id;
-      console.log(key);
+      await this.fetchProductsByArtisan("609ed4202e9d5026d8b72e42");
     },
   },
 }
