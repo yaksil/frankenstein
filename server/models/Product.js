@@ -10,6 +10,7 @@ const product = new mongoose.Schema({
         ref: 'Category'
     },
     images: [String], //array of paths i guess
+    thumbs: [String],
     mainImage: {
         type: String,
         default: ''
