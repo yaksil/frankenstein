@@ -1,29 +1,23 @@
 <template>
   <div class="home">
     <section id="header">
-      <cvrse-header />
     </section>
     <section id="page">
-      <product-page />
+      <login-component />
     </section>
     <section id="footer">
-      <cvrse-footer />
     </section>
   </div>
 </template>
 
 <script>
 
-import CvrseHeader from "@/layouts/components/cvrse-header";
-import CvrseFooter from "@/layouts/components/cvrse-footer";
-import ProductPage from "@/layouts/components/product-page";
 
+import LoginComponent from "@/layouts/components/login-component";
 export default {
   name: "Home",
   components: {
-    ProductPage,
-    CvrseFooter,
-    CvrseHeader,
+    LoginComponent
   },
 
 }
