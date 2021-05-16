@@ -2,7 +2,7 @@
 <div class="search">
   <div class="container mx-auto mt-20">
     <p class="font-roboto italic font-light text-xl text-center">ибо всякий просящий получает, и ищущий находит, и стучащему отворят</p>
-    <input id="search-field" class="search-field"/>
+    <input type="text" id="search-field" class="search-field" placeholder="продукты, товары, имена"/>
   </div>
 </div>
 </template>
