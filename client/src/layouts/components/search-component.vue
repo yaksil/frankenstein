@@ -17,7 +17,7 @@ name: "search-component"
 @layer components {
   .search-field {
     @apply block mx-auto
-    border-2 border-gray-400 h-12 w-3/4
+    border-2 border-black h-12 w-3/4
     rounded-full
   }
 }
