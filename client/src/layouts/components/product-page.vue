@@ -1,21 +1,28 @@
 <template>
-  <div class="product-page"
-       v-if="product.length !== 0"
-       :title="product.title"
-  >
+  <div class="product-page">
     <section id="product-header">
-      <div class="container flex flex-col mx-60 mt-10">
+      <div class="container flex flex-col mx-60 mt-10" v-cloak>
         <p class="font-yeseva text-4xl">{{ product.title }}</p>
         <p class="font-roboto font-bold text-base">category placeholder</p>
       </div>
     </section>
     <section id="product-body">
-      <div class="flex flex-col mx-60">
-        <img class="main-image" :src="`https://i.pinimg.com/564x/a3/87/b4/a387b46a42f1610fdfe5aaef249eea61.jpg`" alt="">
-        <enlargeable-image src="https://i.pinimg.com/564x/a3/87/b4/a387b46a42f1610fdfe5aaef249eea61.jpg" src_large="https://i.pinimg.com/564x/a3/87/b4/a387b46a42f1610fdfe5aaef249eea61.jpg"/>
+      <div class="mx-60">
+        <div class="flex flex-row flex-none" v-cloak>
+          <enlargeable-image :src="product.mainImage" :src_large="product.mainImage"/>
+          <enlargeable-image :src="product.mainImage" :src_large="product.mainImage"/>
+          <enlargeable-image :src="product.mainImage" :src_large="product.mainImage"/>
+          <enlargeable-image :src="product.mainImage" :src_large="product.mainImage"/>
+        </div>
+      <div class="">
+        <img class="main-image" :src="product.mainImage" alt="">
+      </div>
       </div>
     </section>
     <section id="product-info">
+      <div class="product-info">
+        <p>{{ product.description }}</p>
+      </div>
     </section>
     <section id="product-reviews">
     </section>
@@ -25,6 +32,7 @@
 <script>
 import {mapGetters, mapActions} from 'vuex';
 import EnlargeableImage from '@/layouts/components/enlargeable-image'
+// TODO ewview component
 
 export default {
   name: "product-page",
@@ -101,6 +109,5 @@ export default {
     height: 600px;
     object-fit: cover;
   }
-
 }
 </style>
