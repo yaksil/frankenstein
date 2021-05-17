@@ -48,7 +48,6 @@ export default {
   },
   computed: {
     ...mapGetters ([
-      'product',
       'products',
       'artisan'
     ]),
@@ -56,8 +55,6 @@ export default {
   methods: {
     ...mapActions([
       'fetchArtisan',
-      'fetchProduct',
-      'fetchProducts',
       'fetchProductsByArtisan'
     ]),
 

@@ -9,7 +9,7 @@
     <section id="product-body">
       <div class="flex flex-col mx-60">
         <img class="main-image" :src="`https://i.pinimg.com/564x/a3/87/b4/a387b46a42f1610fdfe5aaef249eea61.jpg`" alt="">
-        <enlargeable-image src="" src_large=""/>
+        <enlargeable-image src="`https://i.pinimg.com/564x/a3/87/b4/a387b46a42f1610fdfe5aaef249eea61.jpg`" src_large="`https://i.pinimg.com/564x/a3/87/b4/a387b46a42f1610fdfe5aaef249eea61.jpg`"/>
       </div>
     </section>
     <section id="product-info">

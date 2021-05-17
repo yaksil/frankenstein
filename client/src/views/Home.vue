@@ -3,7 +3,7 @@
     <section id="header">
     </section>
     <section id="page">
-      <login-component />
+      <artisan-inventory _id="609ed4202e9d5026d8b72e42" />
     </section>
     <section id="footer">
     </section>
@@ -13,11 +13,12 @@
 <script>
 
 
-import LoginComponent from "@/layouts/components/login-component";
+import ArtisanInventory from "@/layouts/components/artisan-inventory"
 export default {
   name: "Home",
   components: {
-    LoginComponent
+    ArtisanInventory,
+
   },
 
 }

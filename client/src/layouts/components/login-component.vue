@@ -38,7 +38,6 @@ export default {
 @layer components {
   .parent {
     height: 300px;
-
     top: 25%;
     left: 50%;
     right: 50%;
@@ -61,6 +60,7 @@ export default {
     object-fit: contain;
     height: 75px;
     min-width: 75px;
+    margin-right: 6px;
   }
 }
 </style>
