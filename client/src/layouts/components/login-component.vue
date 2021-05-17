@@ -1,11 +1,14 @@
 <template>
   <div class="login">
     <section id="b-sides">
+
       <div class="parent">
-        <img class="kinda-like-a-logo" src="src/assets/circle.png" alt="">
+        <img class="kinda-like-a-logo" :src="`https://i.pinimg.com/564x/cd/fa/f5/cdfaf5340407f5981d001e32567fe30d.jpg`" alt="">
         <p class="font-curse text-5xl mb-5">cvrse</p>
+        <form>
         <input type="text" class="login-input" placeholder="электронная почта"/>
         <input type="password" class="login-input" placeholder="пароль"/>
+        </form>
         <button class="cvrsebtn">вход</button>
       </div>
     </section>
@@ -34,10 +37,12 @@ export default {
 <style scoped>
 @layer components {
   .parent {
+    height: 300px;
+
     top: 25%;
     left: 50%;
     right: 50%;
-    @apply flex flex-col justify-center items-center
+    @apply flex flex-col justify-center items-center flex-none
     absolute
   }
   .login-input {
@@ -53,8 +58,9 @@ export default {
     position: absolute;
   }
   .kinda-like-a-logo {
-    height: 50px;
-    width: 50px;
+    object-fit: contain;
+    height: 75px;
+    min-width: 75px;
   }
 }
 </style>
