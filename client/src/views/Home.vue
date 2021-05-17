@@ -1,9 +1,10 @@
 <template>
   <div class="home">
     <section id="header">
+      <cvrse-header />
     </section>
     <section id="page">
-      <artisan-inventory _id="609ed4202e9d5026d8b72e42" />
+      <product-page _id="609ee4de5231a2a2d03ae72a" />
     </section>
     <section id="footer">
     </section>
@@ -12,13 +13,13 @@
 
 <script>
 
-
-import ArtisanInventory from "@/layouts/components/artisan-inventory"
+import ProductPage from "@/layouts/components/product-page";
+import CvrseHeader from "@/layouts/components/cvrse-header";
 export default {
   name: "Home",
   components: {
-    ArtisanInventory,
-
+    CvrseHeader,
+    ProductPage,
   },
 
 }
