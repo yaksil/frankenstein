@@ -16,6 +16,7 @@ name: "search-component"
 <style scoped>
 @layer components {
   .search-field {
+    text-indent: 15px;
     @apply block mx-auto
     border-2 border-black h-12 w-3/4
     rounded-full

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const artisan = new mongoose.Schema({
     user_id: {
-        type: mongoose.Schema.Types.ObjectId, // the man behind the artist KInD OF,
+        type: String, // the man behind the artist KInD OF,
         ref: 'User',
     },
     avatar: {
@@ -22,7 +22,7 @@ const artisan = new mongoose.Schema({
         default: ''
     },
     inventory: [{
-        type: mongoose.Schema.Types.ObjectId,
+        type: String,
         ref: 'Product'
     }]
 })

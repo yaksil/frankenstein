@@ -32,7 +32,7 @@ const product = new mongoose.Schema({
       default: 0
     },
     reviews: [{
-        type: mongoose.Schema.Types.ObjectId,
+        type: String,
         ref: 'Review'
     }],
     stars: {

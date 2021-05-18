@@ -3,28 +3,29 @@
     <section id="product-header">
       <div class="container flex flex-col mx-60 mt-10" v-cloak>
         <p class="font-yeseva text-4xl">{{ product.title }}</p>
-        <p class="font-roboto font-bold text-base">category placeholder</p>
+        <p class="font-roboto font-bold text-base">абстрактная категория{{category.cat_name}}</p>
       </div>
     </section>
     <section id="product-body">
       <div class="mx-60">
-        <div class="flex flex-row flex-none" v-cloak>
-          <enlargeable-image :src="product.mainImage" :src_large="product.mainImage"/>
-          <enlargeable-image :src="product.mainImage" :src_large="product.mainImage"/>
-          <enlargeable-image :src="product.mainImage" :src_large="product.mainImage"/>
-          <enlargeable-image :src="product.mainImage" :src_large="product.mainImage"/>
-        </div>
-      <div class="">
+      <div class="flex flex-none flex-row">
         <img class="main-image" :src="product.mainImage" alt="">
+        <p class="mx-5 font-roboto text-base">{{ product.description }}</p>
       </div>
-      </div>
-    </section>
-    <section id="product-info">
-      <div class="product-info">
-        <p>{{ product.description }}</p>
+        <div class="gallery" v-cloak>
+          <enlargeable-image
+              v-for="image in product.images" v-bind:key="image"
+              :src="image" :src_large="image"/>
+        </div>
       </div>
     </section>
     <section id="product-reviews">
+      <div class="container flex flex-col mx-60 mt-10">
+        <p class="font-yeseva text-2xl">отзывы о товаре</p>
+        <review-card v-for="review in product.reviews" v-bind:key="review"
+                     :_id="review"
+        />
+      </div>
     </section>
   </div>
 </template>
@@ -32,35 +33,45 @@
 <script>
 import {mapGetters, mapActions} from 'vuex';
 import EnlargeableImage from '@/layouts/components/enlargeable-image'
-// TODO ewview component
+import ReviewCard from "@/layouts/components/review-card";
 
 export default {
   name: "product-page",
   mounted() {
-    this.fetchProduct(this._id);
+    this.fetchData();
   },
   components: {
+    ReviewCard,
     EnlargeableImage
   },
   computed: {
     ...mapGetters([
-        'product'
+        'product',
+        'category'
     ])
   },
   methods: {
     ...mapActions([
-        'fetchProduct'
-    ])
+        'fetchProduct',
+        'fetchCategory'
+    ]),
+    fetchData() {
+      this.fetchProduct(this._id);
+      this.fetchCategory(this.category_id);
+    }
   },
   props: {
     _id: {
+      type: String
+    },
+    cat_name: {
       type: String
     },
     title: {
       type: String,
       default: ''
     },
-    category: {
+    category_id: {
       type: String,
       default: ''
     },
@@ -87,8 +98,7 @@ export default {
       default: 0
     },
     reviews: [{
-      type: String,
-      default: ''
+      type: String
     }],
     stars: {
       type: Number,
@@ -105,9 +115,21 @@ export default {
 <style scoped>
 @layer components {
   .main-image {
-    width: 600px;
-    height: 600px;
+    width: 500px;
+    height: 500px;
     object-fit: cover;
+  }
+  .enlargeable-image {
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  [v-cloak] {
+    display: none;
+  }
+  .gallery {
+    height: 120px;
+    width: 500px;
+    @apply flex flex-row
   }
 }
 </style>

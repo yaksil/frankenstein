@@ -145,8 +145,8 @@ export default {
 .enlargeable-image > .slot {
   display:inline-block;
   object-fit: cover;
-  max-width: 5%;
-  max-height: 5%;
+  width: 70px;
+  height: 70px;
   cursor:zoom-in;
 }
 /* default img if no element passed in */
