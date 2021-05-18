@@ -10,7 +10,10 @@
       <div class="mx-60">
       <div class="flex flex-none flex-row">
         <img class="main-image" :src="product.mainImage" alt="">
-        <p class="mx-5 font-roboto text-base">{{ product.description }}</p>
+        <div class="flex flex-col flex-none w-1/3 mx-5">
+          <artisan-preview _id="609ed4202e9d5026d8b72e42"/>
+          <p class="font-roboto text-base">{{ product.description }}</p>
+        </div>
       </div>
         <div class="gallery" v-cloak>
           <enlargeable-image
@@ -34,6 +37,7 @@
 import {mapGetters, mapActions} from 'vuex';
 import EnlargeableImage from '@/layouts/components/enlargeable-image'
 import ReviewCard from "@/layouts/components/review-card";
+import ArtisanPreview from "@/layouts/components/artisan-preview";
 
 export default {
   name: "product-page",
@@ -41,19 +45,20 @@ export default {
     this.fetchData();
   },
   components: {
+    ArtisanPreview,
     ReviewCard,
     EnlargeableImage
   },
   computed: {
     ...mapGetters([
         'product',
-        'category'
+        'category',
     ])
   },
   methods: {
     ...mapActions([
         'fetchProduct',
-        'fetchCategory'
+        'fetchCategory',
     ]),
     fetchData() {
       this.fetchProduct(this._id);
@@ -85,7 +90,7 @@ export default {
       type: String,
       default: ''
     },
-    artisan: {
+    artisan_id: {
       type: String,
       default: ''
     },
