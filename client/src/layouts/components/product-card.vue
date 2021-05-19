@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: "product-card.vue",
+  name: "product-card",
   computed: {
 
   },

@@ -30,7 +30,7 @@ import {mapGetters, mapActions} from 'vuex';
 import ArtisanSidebar from "@/layouts/components/artisan-sidebar"
 
 export default {
-  name: "artisan-inventory.vue",
+  name: "artisan-inventory",
   components: {
     ArtisanSidebar,
     ProductCard,

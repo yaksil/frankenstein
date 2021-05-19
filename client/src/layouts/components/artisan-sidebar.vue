@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: "artisan-sidebar.vue",
+  name: "artisan-sidebar",
   props: {
     _id: {
       type: String,
