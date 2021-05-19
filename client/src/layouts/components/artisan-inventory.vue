@@ -36,8 +36,6 @@ export default {
     ProductCard,
   },
   props: {
-    // TODO passing artisan id as a prop
-    // artisan id
     _id: {
       type: String
     }

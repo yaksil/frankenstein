@@ -1,9 +1,9 @@
 <template>
   <div class="product-page">
     <section id="product-header">
-      <div class="container flex flex-col mx-60 mt-10" v-cloak>
+      <div class="container flex flex-col mx-60 mt-10">
         <p class="font-yeseva text-4xl">{{ product.title }}</p>
-        <p class="font-roboto font-bold text-base">абстрактная категория{{category.cat_name}}</p>
+        <p class="font-roboto font-bold text-base">{{ category.cat_name }}</p>
       </div>
     </section>
     <section id="product-body">
@@ -11,7 +11,7 @@
       <div class="flex flex-none flex-row">
         <img class="main-image" :src="product.mainImage" alt="">
         <div class="flex flex-col flex-none w-1/3 mx-5">
-          <artisan-preview _id="609ed4202e9d5026d8b72e42"/>
+          <artisan-preview :_id="product.artisan_id"/>
           <p class="font-roboto text-base text-justify">{{ product.description }}</p>
         </div>
         <div class="flex flex-none flex-col">
@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import {mapGetters, mapActions} from 'vuex';
+import {mapActions, mapGetters} from 'vuex';
 import EnlargeableImage from '@/layouts/components/enlargeable-image'
 import ReviewCard from "@/layouts/components/review-card";
 import ArtisanPreview from "@/layouts/components/artisan-preview";
@@ -57,7 +57,7 @@ export default {
     ...mapGetters([
         'product',
         'category',
-    ])
+    ]),
   },
   methods: {
     ...mapActions([
@@ -66,8 +66,8 @@ export default {
     ]),
     fetchData() {
       this.fetchProduct(this._id);
-      this.fetchCategory(this.category_id);
-    }
+      this.fetchCategory(this.product.category_id);
+    },
   },
   props: {
     _id: {
