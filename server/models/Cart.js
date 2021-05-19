@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const cart = new mongoose.Schema({
     user_id: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: String,
         ref: 'User',
         required: true
     },
@@ -11,7 +11,7 @@ const cart = new mongoose.Schema({
     // true as active order, false as inactive == completed as archived or cancelled
     // 'tis not even a feature yet
     state: {
-        type: mongoose.Schema.Types.String,
+        type: String,
         enum: ['active', 'completed', 'cancelled'],
         default: 'active'
     },
@@ -19,24 +19,24 @@ const cart = new mongoose.Schema({
     // make it eh product refs for now
     // idk how it's gonna work anyways
     items: [{
-        type: mongoose.Schema.Types.ObjectId,
+        type: String,
         ref: 'Product',
         required: true
     }],
 
     // shipping info b like
     shipping: {
-        type: mongoose.Schema.Types.String
+        type: String
     },
 
     //counted as whatever
     discounts: [{
-        type: mongoose.Schema.Types.Number
+        type: Number
     }],
 
     // TODO maths to subtract discounts from subtotal -- maybe as a function tho
     total: {
-        type: mongoose.Schema.Types.Number
+        type: String
     }
 })
 

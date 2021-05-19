@@ -12,7 +12,11 @@
         <img class="main-image" :src="product.mainImage" alt="">
         <div class="flex flex-col flex-none w-1/3 mx-5">
           <artisan-preview _id="609ed4202e9d5026d8b72e42"/>
-          <p class="font-roboto text-base">{{ product.description }}</p>
+          <p class="font-roboto text-base text-justify">{{ product.description }}</p>
+        </div>
+        <div class="flex flex-none flex-col">
+          <p class="font-roboto font-bold text-base mb-2">в наличии: {{product.in_stock}}</p>
+          <button class="cvrsebtn">добавить в корзину</button>
         </div>
       </div>
         <div class="gallery" v-cloak>
@@ -99,8 +103,7 @@ export default {
       default: ''
     },
     in_stock: {
-      type: Number,
-      default: 0
+      type: Number
     },
     reviews: [{
       type: String

@@ -1,7 +1,8 @@
 <template>
   <div class="artisan-preview">
-    <div>
+    <div class="mb-2 flex flex-none flex-row">
       <img class="avatar" :src="artisan.avatar" alt="">
+      <p class="font-roboto font-bold text-base mt-5 ml-2">{{artisan.name}} говорит:</p>
     </div>
   </div>
 </template>
@@ -35,10 +36,6 @@ export default {
       type: String,
       default: ''
     },
-    location: {
-      type: String,
-      default: ''
-    }
   }
 }
 </script>
