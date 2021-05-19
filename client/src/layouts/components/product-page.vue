@@ -10,8 +10,11 @@
       <div class="mx-60">
       <div class="flex flex-none flex-row">
         <img class="main-image" :src="product.mainImage" alt="">
-        <div class="flex flex-col flex-none w-1/3 mx-5">
-          <artisan-preview :_id="product.artisan_id"/>
+        <div class="flex flex-col flex-none w-1/3 mx-5" v-cloak >
+          <artisan-preview
+              :avatar="artisan.avatar"
+              :name="artisan.name"
+          />
           <p class="font-roboto text-base text-justify">{{ product.description }}</p>
         </div>
         <div class="flex flex-none flex-col">
@@ -47,35 +50,47 @@ export default {
   name: "product-page",
   mounted() {
     this.fetchData();
+    console.log(this.product.artisan_id)
   },
   components: {
-    ArtisanPreview,
     ReviewCard,
-    EnlargeableImage
+    EnlargeableImage,
+    ArtisanPreview
   },
   computed: {
     ...mapGetters([
         'product',
         'category',
+        'artisan'
     ]),
+
   },
   methods: {
     ...mapActions([
         'fetchProduct',
         'fetchCategory',
+        'fetchArtisan'
     ]),
-    fetchData() {
-      this.fetchProduct(this._id);
-      this.fetchCategory(this.product.category_id);
+    async fetchData() {
+      await this.fetchProduct(this._id);
+      await this.fetchCategory(this.product.category_id);
+      await this.fetchArtisan(this.product.artisan_id);
     },
   },
   props: {
     _id: {
       type: String
     },
+
     cat_name: {
       type: String
     },
+
+    avatar: {
+      type: String
+    },
+    name: String,
+
     title: {
       type: String,
       default: ''

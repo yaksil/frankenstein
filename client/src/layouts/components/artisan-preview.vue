@@ -1,8 +1,8 @@
 <template>
   <div class="artisan-preview">
     <div class="mb-2 flex flex-none flex-row">
-      <img class="avatar" :src="artisan.avatar" alt="">
-      <p class="font-roboto font-bold text-base mt-5 ml-2">{{artisan.name}} говорит:</p>
+      <img class="avatar" :src="avatar" alt="">
+      <p class="font-roboto font-bold text-base mt-5 ml-2">{{name}} говорит:</p>
     </div>
   </div>
 </template>
@@ -12,7 +12,7 @@ import {mapGetters, mapActions} from 'vuex';
 export default {
   name: "artisan-preview",
   mounted() {
-    this.fetchArtisan(this._id);
+    //this.fetchArtisan(this._id);
   },
   computed: {
     ...mapGetters([

@@ -9,6 +9,10 @@ const product = new mongoose.Schema({
         type: String,
         ref: 'Category'
     },
+    artisan_id: {
+        type: String, //references artisan? represents a store basically
+        ref: 'Artisan',
+    },
     images: [String], //array of paths i guess
     thumbs: [String],
     mainImage: {
@@ -18,10 +22,6 @@ const product = new mongoose.Schema({
     description: {
         type: String,
         default: '',
-    },
-    artisan: {
-        type: String, //references artisan? represents a store basically
-        ref: 'Artisan',
     },
     price: {
         type: Number,
