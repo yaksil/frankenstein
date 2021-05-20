@@ -87,15 +87,17 @@ export default {
     _id: {
       type: String
     },
-    inCart: {
-      type: Boolean,
-      default: false,
-    },
   },
   computed: {
     ...mapGetters([
       'product',
+      'cartItems'
     ]),
+    cartItemsIds: ({cartItems}) => cartItems.map(({_id}) => _id),
+    inCart() {
+      return this.cartItemsIds.includes(this.product._id);
+    },
+
     // TODO button cant be clicked if not available
     isAvailable() {
       return this.product.available

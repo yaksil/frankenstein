@@ -8,20 +8,9 @@
 </template>
 
 <script>
-import {mapGetters, mapActions} from 'vuex';
 
 export default {
   name: "artisan-preview",
-  computed: {
-    ...mapGetters([
-      'artisan'
-    ])
-  },
-  methods: {
-    ...mapActions([
-      'fetchArtisan'
-    ])
-  },
   props: {
     _id: {
       type: String,

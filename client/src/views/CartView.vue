@@ -6,11 +6,29 @@
     <section id="page">
       <div class="flex flex-row flex-nowrap mx-60 mt-10">
         <div class="block">
-          <p class="font-yeseva text-4xl">корзина</p>
-          <template>
-            <div class="product-list">
-
-            </div>
+          <p class="font-yeseva text-4xl mb-2">корзина</p>
+          <template v-if="cartItems.length > 0">
+              <div class="product-list">
+                <ul>
+                  <li class="mb-2" v-for="(item, key) in cartItems"
+                      :key="key">
+                    <router-link :to="{path: `/p/${item._id}`}">
+                      <product-list-preview
+                          v-bind:key="key"
+                          :_id="item._id"
+                          :main-image="item.mainImage"
+                          :price="item.price"
+                          :title="item.title"/>
+                    </router-link>
+                  </li>
+                </ul>
+                <hr>
+                <p>итог</p>
+                <button class="cvrsebtn">перейти к оплате</button>
+              </div>
+          </template>
+          <template v-else>
+            <p class="font-roboto font-light text-base mt-10">а корзина-то пустая оказывается!</p>
           </template>
         </div>
       </div>
@@ -24,10 +42,26 @@
 <script>
 import CvrseHeader from "@/layouts/components/cvrse-header";
 import CvrseFooter from "@/layouts/components/cvrse-footer";
+import {mapGetters, mapActions, mapMutations} from 'vuex';
+import ProductListPreview from "@/layouts/components/product-list-preview";
 
 export default {
   name: "CartView",
-  components: {CvrseFooter, CvrseHeader}
+  components: {ProductListPreview, CvrseFooter, CvrseHeader},
+  computed: {
+    ...mapGetters([
+      'cartItems',
+      'cartTotalPrice',
+      'cartCount',
+    ]),
+  },
+  methods: {
+    ...mapActions([]),
+
+    ...mapMutations([
+      'clearCart'
+    ])
+  }
 }
 </script>
 
@@ -36,6 +70,15 @@ export default {
   .cvrsefooter {
     position: absolute;
   }
+
+  .product-list {
+    padding: 20px;
+    width: auto;
+    max-width: 30%;
+    height: auto;
+    @apply container border-2 border-gray-900 rounded-2xl
+  }
+
 }
 
 </style>
