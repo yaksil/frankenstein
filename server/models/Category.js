@@ -9,7 +9,7 @@ const category = new mongoose.Schema({
         type: String,
         required: true
     },
-    products: [{
+    product_inventory: [{
         type: String,
         ref: 'Product'
     }]

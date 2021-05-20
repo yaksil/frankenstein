@@ -1,4 +1,4 @@
-import {getProduct, getProducts, getProductsByArtisan} from "@/services/products.service";
+import {getProduct, getProducts, getProductsByArtisan, getProductsByCategory} from "@/services/products.service";
 /**
  * Vuex State Manager pattern
  * @returns {{categoryError: null, categories: [], category: {}}}
@@ -37,6 +37,14 @@ const actions = {
         try {
             const products = await getProductsByArtisan(artisan);
             commit('setProducts', products);
+        } catch (err) {
+            commit('setProductError', err);
+        }
+    },
+    async fetchProductsByCategory({commit}, category) {
+        try {
+            const products = await getProductsByCategory(category);
+            commit('setProducts', products)
         } catch (err) {
             commit('setProductError', err);
         }
