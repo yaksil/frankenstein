@@ -4,9 +4,9 @@
       <img class="product-image"
            v-bind:style="[this.available ? {'border': '0 black'} : {'filter': 'grayscale(100)'}]"
            :src="mainImage" alt=""/>
-    </router-link>
     <p class="product-price"> {{ price }}₽</p>
     <p class="product-title">{{ title }}</p>
+    </router-link>
   </div>
 </template>
 

@@ -26,6 +26,12 @@ const routes = [
         component: () => import(/* webpackChunk: "Product-page" */ '@/views/ProductView')
     },
     {
+        path: '/a',
+        name: 'artisan-all',
+        props: true,
+        component: () => import(/* webpackChunk: "Artisan-All" */ '@/views/ArtisanAll')
+    },
+    {
         path: '/a/:_id',
         name: 'artisan-view',
         props: true,
@@ -34,7 +40,19 @@ const routes = [
     {
         path: '/cart',
         name: 'cart',
-        component: () => import(/* webpackChunk: "Artisan-page" */ '@/views/CartView')
+        component: () => import(/* webpackChunk: "Cart-page" */ '@/views/CartView')
+    },
+    {
+        path: '/c',
+        name: 'category-all',
+        props: true,
+        component: () => import(/* webpackChunk "Category-All" */ '@/views/CategoryAll')
+    },
+    {
+        path: '/c/:_id',
+        name: 'category-view',
+        props: true,
+        component: () => import(/* webpackChunk "Category-view" */ '@/views/CategoryView')
     }
 ];
 

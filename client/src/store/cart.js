@@ -1,4 +1,4 @@
-import {getCart, getCarts} from "@/services/cart.service";
+import {sum} from 'ramda'
 
 /**
  * Vuex State Manager pattern
@@ -6,46 +6,42 @@ import {getCart, getCarts} from "@/services/cart.service";
  */
 
 const mutations = {
-    setCart(state, cart) {
-        state.cart = cart;
+    addToCart(state, product) {
+        const productInCart = state.cartItems.find(({_id}) => product._id === _id)
+        if (productInCart) {
+            const currentProductsInCart = state.cartItems
+            state.cartItems = currentProductsInCart.filter(
+                ({_id}) => product._id !== _id,
+            )
+        } else {
+            state.cartItems.push(product)
+        }
     },
-    setCarts(state, carts) {
-        state.carts = carts;
+    setPaymentError(state, error) {
+        state.paymentError = error
     },
-    setCartError(state, cartError) {
-        state.cartError = cartError;
-    }
+    clearCart(state) {
+        state.cartItems = []
+    },
+
 }
 
-const actions = {
-    async fetchCart({commit}, id) {
-        try {
-            const cart = await getCart(id);
-            commit('setCart', cart);
-        } catch (err) {
-            commit('setCartError', err);
-        }
-    },
-    async fetchCarts({commit}) {
-        try {
-            const carts = await getCarts();
-            commit('setCarts', carts);
-        } catch (err) {
-            commit('setCartError', err);
-        }
-    },
-}
+const actions = {}
 
 const getters = {
+    cartTotalPrice: ({cartItems}) => sum(cartItems.map(item => item.price)),
+    cartCount: ({cartItems}) => cartItems.length,
     cart: ({cart}) => cart,
-    carts: ({carts}) => carts,
-    cartError: ({cartError}) => cartError
+    cartItems: ({cartItems}) => cartItems,
+    paymentError: ({paymentError}) => paymentError,
 }
 
 const state = () => ({
-    cart: {},
-    carts: [],
-    cartError: null,
+    cart: {
+        total: 0,
+    },
+    cartItems: [],
+    paymentError: null,
 })
 
 export default {
