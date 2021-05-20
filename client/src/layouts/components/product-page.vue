@@ -12,6 +12,7 @@
           <img class="main-image" :src="product.mainImage" alt="">
           <div class="flex flex-col flex-none w-1/3 mx-5" v-cloak>
             <artisan-preview
+                :id="product.artisan_id._id"
                 :name="product.artisan_id.name"
                 :avatar="product.artisan_id.avatar"
             />

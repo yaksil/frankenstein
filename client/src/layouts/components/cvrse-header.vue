@@ -11,8 +11,11 @@
         <li class="list-elem mr-10 hover:text-cvrse-green">
           <router-link to="/faq">faq</router-link>
         </li>
-        <li class="list-elem hover:text-cvrse-green">
+        <li class="list-elem mr-10 hover:text-cvrse-green">
           <router-link to="/search">поиск</router-link>
+        </li>
+        <li class="list-elem hover:text-cvrse-green">
+          <router-link to="/cart">покупочки</router-link>
         </li>
       </ul>
     </div>

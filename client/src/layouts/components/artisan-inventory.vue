@@ -16,7 +16,7 @@
           :available="product.available"
           :_id="product._id"
           :title="product.title"
-          :price="product.price + '₽'"
+          :price="product.price"
           :mainImage="product.mainImage"
           :description="product.description"
       />

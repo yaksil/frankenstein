@@ -1,7 +1,9 @@
 <template>
   <div class="artisan-preview">
     <div class="mb-2 flex flex-none flex-row">
+      <router-link :to="{path: `/a/${this._id}`}">
       <img class="avatar" :src="avatar" alt="">
+      </router-link>
       <p class="font-roboto font-bold text-base mt-5 ml-2">{{ name }} говорит:</p>
     </div>
   </div>
