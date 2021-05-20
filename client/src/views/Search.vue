@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="search">
     <section id="header">
       <cvrse-header />
     </section>

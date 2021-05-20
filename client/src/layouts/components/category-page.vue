@@ -9,8 +9,9 @@
     <section id="inventory">
       <div class="container grid gap-x-1 grid-cols-4">
         <product-card
-            v-for="product in category.product_inventory"
-            v-bind:key="product"
+            v-for="(product, key) in category.product_inventory"
+            v-bind:key="key"
+            :_id="product._id"
             :title="product.title"
             :mainImage="product.mainImage"
             :price="product.price"

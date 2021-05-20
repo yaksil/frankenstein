@@ -1,11 +1,11 @@
 <template>
   <div class="product-card">
-    <a href="#">
+    <router-link :to="`/p/${this._id}`">
       <img class="product-image"
            v-bind:style="[this.available ? {'border': '0 black'} : {'filter': 'grayscale(100)'}]"
            :src="mainImage" alt=""/>
-    </a>
-    <p class="product-price"> {{ price }}</p>
+    </router-link>
+    <p class="product-price"> {{ price }}₽</p>
     <p class="product-title">{{ title }}</p>
   </div>
 </template>
@@ -27,8 +27,8 @@ export default {
       default: ''
     },
     price: {
-      type: String,
-      default: ''
+      type: Number,
+      default: 0
     },
     description: {
       type: String,
