@@ -2,7 +2,7 @@
   <div class="product-card">
     <a href="#">
       <img class="product-image"
-           v-bind:style="[this.available ? {'border': '0 black'} : {'filter': 'grayscale(50)'}]"
+           v-bind:style="[this.available ? {'border': '0 black'} : {'filter': 'grayscale(100)'}]"
            :src="mainImage" alt=""/>
     </a>
     <p class="product-price"> {{ price }}</p>
@@ -13,9 +13,7 @@
 <script>
 export default {
   name: "product-card",
-  computed: {
-
-  },
+  computed: {},
   props: {
     _id: {
       type: String
@@ -51,14 +49,17 @@ export default {
     height: 200px;
     border: 0 black;
   }
+
   .product-card {
     width: 210px;
     height: 210px;
     margin-top: 70px;
   }
+
   .product-title {
     @apply font-roboto font-medium
   }
+
   .product-price {
     @apply font-yeseva text-base
   }

@@ -1,5 +1,5 @@
 const Artisan = require('./Artisan')
-const Cart = require('./Cart')
+const Cart = require('./Order')
 const Category = require('./Category')
 const SimpleProducts = require('./SimpleProducts')
 const Product = require('./Product') // vot zdes vot krinj

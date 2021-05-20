@@ -33,22 +33,6 @@ const actions = {
             commit('setProductError', err);
         }
     },
-    async fetchProductsByArtisan({commit}, artisan) {
-        try {
-            const products = await getProductsByArtisan(artisan);
-            commit('setProducts', products);
-        } catch (err) {
-            commit('setProductError', err);
-        }
-    },
-    async fetchProductsByCategory({commit}, category) {
-        try {
-            const products = await getProductsByCategory(category);
-            commit('setProducts', products)
-        } catch (err) {
-            commit('setProductError', err);
-        }
-    }
 }
 
 const getters = {

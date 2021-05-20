@@ -9,18 +9,18 @@
         :avatar="artisan.avatar"
         :inventory="artisan.inventory"
     />
-  <div class="artisan-inventory">
-    <product-card
-        v-for="(product, key) in products"
-        :key="key"
-        :available="product.available"
-        :_id="product._id"
-        :title="product.title"
-        :price="product.price + '₽'"
-        :mainImage="product.mainImage"
-        :description="product.description"
-    />
-  </div>
+    <div class="artisan-inventory">
+      <product-card
+          v-for="(product, key) in artisan.inventory"
+          :key="key"
+          :available="product.available"
+          :_id="product._id"
+          :title="product.title"
+          :price="product.price + '₽'"
+          :mainImage="product.mainImage"
+          :description="product.description"
+      />
+    </div>
   </div>
 </template>
 
@@ -42,10 +42,10 @@ export default {
   },
   mounted() {
     //pass props from some other page idk
-    this.fetchInventory();
+    this.fetchArtisan(this._id)
   },
   computed: {
-    ...mapGetters ([
+    ...mapGetters([
       'products',
       'artisan'
     ]),
@@ -55,11 +55,6 @@ export default {
       'fetchArtisan',
       'fetchProductsByArtisan'
     ]),
-
-    async fetchInventory () {
-      await this.fetchArtisan(this._id); // хуйня параша панки хой победа наша
-      await this.fetchProductsByArtisan(this._id);
-    },
   },
 }
 </script>

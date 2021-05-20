@@ -2,7 +2,7 @@ module.exports = {
     routes: [
         'a', //artisans
         'c', //categories
-        'cart', //carts
+        'o', //orders
         'p', //products
         'r', //reviews
         'u', //users

@@ -3,17 +3,12 @@ const boom = require('@hapi/boom')
 /**
  * generic controller
  * бля бояринъ меня расхуярил
- * get +
- * getALl +
- * create - (500) or (400)? what the fuck
- * update +
- * delete +/- functional on server but 500 on response --fixed
  */
 
-const genController = (model) => ({
+const genController = (model, relations) => ({
     async getById (req, res) {
         try {
-            const item = await model.findById(req.params.id)
+            const item = await model.findById(req.params.id).populate(relations.getById);
             return res.status(200).json(item)
         } catch (e) {
             return res.status(400).send(boom.boomify(e))

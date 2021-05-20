@@ -1,10 +1,6 @@
 const mongoose = require('mongoose');
 
 const artisan = new mongoose.Schema({
-    user_id: {
-        type: String, // the man behind the artist KInD OF,
-        ref: 'User',
-    },
     avatar: {
         type: String,
         default: ''
@@ -24,7 +20,11 @@ const artisan = new mongoose.Schema({
     inventory: [{
         type: String,
         ref: 'Product'
-    }]
+    }],
+    user_id: {
+        type: String, // the man behind the artist KInD OF,
+        ref: 'User',
+    },
 })
 
 module.exports = mongoose.model("Artisan", artisan, 'Artisans');
