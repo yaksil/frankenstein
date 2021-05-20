@@ -3,20 +3,16 @@
   <header class="lg:container mx-auto mt-5 flex justify-between">
     <div class="inline-block">
       <div class="font-curse text-3xl text-black hover:text-cvrse-red">
-        <a href="#">cvrse</a>
+        <router-link to="/">cvrse</router-link>
       </div>
     </div>
     <div class="inline-block place-content-end">
       <ul class="pt-1.5 font-yeseva text-black inline-flex">
         <li class="list-elem mr-10 hover:text-cvrse-green">
-          <a href="#">
-            faq
-          </a>
+          <router-link to="/faq">faq</router-link>
         </li>
         <li class="list-elem hover:text-cvrse-green">
-          <a href="#">
-            поиск
-          </a>
+          <router-link to="/search">поиск</router-link>
         </li>
       </ul>
     </div>

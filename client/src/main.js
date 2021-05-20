@@ -3,16 +3,14 @@ import Vuex from 'vuex'
 import App from './App.vue'
 import Store from './store/_index'
 import './assets/tailwind.css'
-import EnlargeableImage from '@diracleo/vue-enlargeable-image';
+import router from '@/routes/_index'
 
 Vue.config.productionTip = false;
 Vue.use(Vuex);
-Vue.use(EnlargeableImage);
 
 new Vue({
-  store: Store,
-  modules: {
-
-  },
-  render: h => h(App),
+    store: Store,
+    router,
+    modules: {},
+    render: h => h(App),
 }).$mount('#app')
