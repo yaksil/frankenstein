@@ -1,4 +1,4 @@
-import {getProduct, getProducts, getProductsByArtisan, getProductsByCategory} from "@/services/products.service";
+import {getProduct, getProducts} from "@/services/products.service";
 /**
  * Vuex State Manager pattern
  * @returns {{categoryError: null, categories: [], category: {}}}

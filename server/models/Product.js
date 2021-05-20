@@ -5,6 +5,7 @@ const product = new mongoose.Schema({
         type: String,
         default: '',
     },
+
     category_id: {
         type: String,
         ref: 'Category'
@@ -13,12 +14,14 @@ const product = new mongoose.Schema({
         type: String, //references artisan? represents a store basically
         ref: 'Artisan',
     },
+
     images: [String], //array of paths i guess
     thumbs: [String],
     mainImage: {
         type: String,
         default: ''
     },
+
     description: {
         type: String,
         default: '',
@@ -28,13 +31,15 @@ const product = new mongoose.Schema({
         default: 0,
     },
     in_stock: {
-      type: Number,
-      default: 0
+        type: Number,
+        default: 0
     },
+
     reviews: [{
         type: String,
         ref: 'Review'
     }],
+
     stars: {
         type: Number,
         default: 0
@@ -42,6 +47,7 @@ const product = new mongoose.Schema({
     available: {
         type: Boolean,
     },
+
     date_created: {
         type: mongoose.Schema.Types.Date,
         default: new Date(),

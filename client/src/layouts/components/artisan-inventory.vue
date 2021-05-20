@@ -46,14 +46,12 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'products',
       'artisan'
     ]),
   },
   methods: {
     ...mapActions([
-      'fetchArtisan',
-      'fetchProductsByArtisan'
+      'fetchArtisan'
     ]),
   },
 }

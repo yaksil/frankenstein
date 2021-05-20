@@ -3,7 +3,8 @@
     <section id="header">
     </section>
     <section id="page">
-      <artisan-inventory _id="609ed4202e9d5026d8b72e42" />
+     <product-page _id="609ee4de5231a2a2d03ae72a"
+     />
     </section>
     <section id="footer">
 
@@ -14,10 +15,10 @@
 <script>
 
 
-import ArtisanInventory from "@/layouts/components/artisan-inventory";
+import ProductPage from "@/layouts/components/product-page";
 export default {
   name: "Home",
-  components: {ArtisanInventory}
+  components: {ProductPage, }
 }
 </script>
 

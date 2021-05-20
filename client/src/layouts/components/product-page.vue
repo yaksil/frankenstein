@@ -3,25 +3,25 @@
     <section id="product-header">
       <div class="container flex flex-col mx-60 mt-10">
         <p class="font-yeseva text-4xl">{{ product.title }}</p>
-        <p class="font-roboto font-bold text-base">{{ category.cat_name }}</p>
+        <p class="font-roboto font-bold text-base">{{ product.category_id.cat_name }}</p>
       </div>
     </section>
     <section id="product-body">
       <div class="mx-60">
-      <div class="flex flex-none flex-row">
-        <img class="main-image" :src="product.mainImage" alt="">
-        <div class="flex flex-col flex-none w-1/3 mx-5" v-cloak >
-          <artisan-preview
-              :avatar="artisan.avatar"
-              :name="artisan.name"
-          />
-          <p class="font-roboto text-base text-justify">{{ product.description }}</p>
+        <div class="flex flex-none flex-row">
+          <img class="main-image" :src="product.mainImage" alt="">
+          <div class="flex flex-col flex-none w-1/3 mx-5" v-cloak>
+            <artisan-preview
+                :name="product.artisan_id.name"
+                :avatar="product.artisan_id.avatar"
+            />
+            <p class="font-roboto text-base text-justify">{{ product.description }}</p>
+          </div>
+          <div class="flex flex-none flex-col">
+            <p class="font-roboto font-bold text-base mb-2">в наличии: {{ product.in_stock }}</p>
+            <button class="cvrsebtn">добавить в корзину</button>
+          </div>
         </div>
-        <div class="flex flex-none flex-col">
-          <p class="font-roboto font-bold text-base mb-2">в наличии: {{product.in_stock}}</p>
-          <button class="cvrsebtn">добавить в корзину</button>
-        </div>
-      </div>
         <div class="gallery" v-cloak>
           <enlargeable-image
               v-for="image in product.images" v-bind:key="image"
@@ -33,7 +33,8 @@
       <div class="container flex flex-col mx-60 mt-10">
         <p class="font-yeseva text-2xl">отзывы о товаре</p>
         <review-card v-for="review in product.reviews" v-bind:key="review"
-                     :_id="review"
+                     :review_body="review.review_body"
+                     :review_rating="review.review_rating"
         />
       </div>
     </section>
@@ -49,8 +50,7 @@ import ArtisanPreview from "@/layouts/components/artisan-preview";
 export default {
   name: "product-page",
   mounted() {
-    this.fetchData();
-    console.log(this.product.artisan_id)
+    this.fetchProduct(this._id);
   },
   components: {
     ReviewCard,
@@ -59,78 +59,20 @@ export default {
   },
   computed: {
     ...mapGetters([
-        'product',
-        'category',
-        'artisan'
+      'product',
     ]),
 
   },
   methods: {
     ...mapActions([
-        'fetchProduct',
-        'fetchCategory',
-        'fetchArtisan'
+      'fetchProduct',
     ]),
-    async fetchData() {
-      await this.fetchProduct(this._id);
-      await this.fetchCategory(this.product.category_id);
-      await this.fetchArtisan(this.product.artisan_id);
-    },
+
   },
   props: {
     _id: {
       type: String
     },
-
-    cat_name: {
-      type: String
-    },
-
-    avatar: {
-      type: String
-    },
-    name: String,
-
-    title: {
-      type: String,
-      default: ''
-    },
-    category_id: {
-      type: String,
-      default: ''
-    },
-    images: [String],
-    thumbs: [String],
-    mainImage: {
-      type: String,
-      default: ''
-    },
-    description: {
-      type: String,
-      default: ''
-    },
-    artisan_id: {
-      type: String,
-      default: ''
-    },
-    price: {
-      type: String,
-      default: ''
-    },
-    in_stock: {
-      type: Number
-    },
-    reviews: [{
-      type: String
-    }],
-    stars: {
-      type: Number,
-      default: 0
-    },
-    available: {
-      type: Boolean,
-      default: false
-    }
   }
 }
 </script>
@@ -142,13 +84,16 @@ export default {
     height: 500px;
     object-fit: cover;
   }
+
   .enlargeable-image {
     margin-right: 10px;
     margin-top: 10px;
   }
+
   [v-cloak] {
     display: none;
   }
+
   .gallery {
     height: 120px;
     width: 500px;
