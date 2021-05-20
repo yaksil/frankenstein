@@ -1,10 +1,10 @@
 <template>
   <div class="home">
     <section id="header">
+      <cvrse-header />
     </section>
     <section id="page">
-     <product-page _id="609ee4de5231a2a2d03ae72a"
-     />
+      <category-page _id="606b27402c4a4f090f973e44" />
     </section>
     <section id="footer">
 
@@ -14,11 +14,11 @@
 
 <script>
 
-
-import ProductPage from "@/layouts/components/product-page";
+import CategoryPage from "@/layouts/components/category-page";
+import CvrseHeader from "@/layouts/components/cvrse-header";
 export default {
   name: "Home",
-  components: {ProductPage, }
+  components: {CvrseHeader, CategoryPage}
 }
 </script>
 
