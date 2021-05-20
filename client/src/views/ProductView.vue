@@ -4,9 +4,7 @@
       <cvrse-header />
     </section>
     <section id="page">
-     <router-view>
-       <product-page :_id="this._id" />
-     </router-view>
+      <product-page :_id="this._id" v-cloak/>
     </section>
     <section id="footer">
       <cvrse-footer class="cvrsefooter" />
@@ -17,9 +15,10 @@
 <script>
 import CvrseHeader from "@/layouts/components/cvrse-header";
 import CvrseFooter from "@/layouts/components/cvrse-footer";
-import ProductPage from "@/layouts/components/product-page"
+import ProductPage from "@/layouts/components/product-page";
+
 export default {
-  name: "ProductPage",
+  name: "ProductView",
   components: {CvrseFooter, CvrseHeader, ProductPage},
   mounted() {
     console.log(this._id);
