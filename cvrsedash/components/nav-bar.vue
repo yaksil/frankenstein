@@ -1,7 +1,9 @@
 <template>
   <nav>
     <nuxt-link to="/">
-      <h2>cvrse— dashboard</h2>
+      <h2>
+        cvrse— dashboard
+      </h2>
     </nuxt-link>
     <nav-item v-for="(item, key) in menu"
               :key="key"
