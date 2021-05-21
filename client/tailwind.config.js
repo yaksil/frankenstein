@@ -10,7 +10,8 @@ module.exports = {
       },
       colors: {
         'cvrse-red': '#B44545',
-        'cvrse-green': '#219589'
+        'cvrse-green': '#219589',
+        'dashboard-bg': '#f4f8fb',
       }
     },
   },
