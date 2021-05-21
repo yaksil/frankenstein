@@ -7,7 +7,7 @@ const router = require('express-promise-router')(); //bloody hell i can't believ
 const {checkJWTSign} = require('../middlewares/jwt.vibeCheck.middleware');
 const {artisan} = require('../controllers/_index.js');
 
-router.route("/").get(artisan.getAll);
+router.route("/").get(checkJWTSign, artisan.getAll);
 router.route("/:id").get(artisan.getById);
 router.route("/").post(artisan.create);
 router.route("/").get(artisan.getAll);

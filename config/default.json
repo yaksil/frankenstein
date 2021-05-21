@@ -1,4 +1,6 @@
 {
   "port": 4545,
-  "mongoUri": "mongodb+srv://abuser:abuser@cluster0.ylbws.mongodb.net/cursemarket?retryWrites=true&w=majority"
+  "mongoUri": "mongodb+srv://abuser:abuser@cluster0.ylbws.mongodb.net/cursemarket?retryWrites=true&w=majority",
+  "JWT_SECRET": "ne_hochu_na_front1488#1337podhorny.synitsyn.busygin.fedorova",
+  "JWT_SECRET_REFRESH": "ya_ebal_tvoyu_telku@pokemon_mc_nikita#love.spaghetti.tomatoes.cucumbers.i.love.you.suck.ass"
 }
