@@ -32,7 +32,9 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: process.env.API_SUPER_SECRET_URL,
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},

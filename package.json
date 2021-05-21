@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "@hapi/boom": "^9.1.2",
-    "config": "^3.3.3",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-promise-router": "^4.1.0",
     "express-query-parser": "^1.2.0",
