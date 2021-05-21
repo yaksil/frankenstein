@@ -36,7 +36,7 @@ start().then();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-//sets paths automatically, kinda cool
+//serves paths automatically, kinda cool
 routes.forEach(item => {
     app.use(`/api/${item}`, require(`./server/routes/${item}`));
 })
