@@ -18,7 +18,9 @@
     "express": "^4.17.1",
     "express-promise-router": "^4.1.0",
     "express-query-parser": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.17",
+    "ramda": "^0.27.1",
     "vue": "^3.0.5"
   },
   "devDependencies": {

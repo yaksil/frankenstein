@@ -4,8 +4,10 @@ const order = require('./order.controller');
 const product = require('./product.controller');
 const review = require('./review.controller');
 const user = require('./user.controller');
+const auth = require('./auth.controller');
 
 module.exports = {
+    auth,
     artisan,
     category,
     order,

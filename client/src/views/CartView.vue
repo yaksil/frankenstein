@@ -8,24 +8,25 @@
         <div class="block">
           <p class="font-yeseva text-4xl mb-2">корзина</p>
           <template v-if="cartItems.length > 0">
-              <div class="product-list">
-                <ul>
-                  <li class="mb-2" v-for="(item, key) in cartItems"
-                      :key="key">
-                    <router-link :to="{path: `/p/${item._id}`}">
-                      <product-list-preview
-                          v-bind:key="key"
-                          :_id="item._id"
-                          :main-image="item.mainImage"
-                          :price="item.price"
-                          :title="item.title"/>
-                    </router-link>
-                  </li>
-                </ul>
-                <hr>
-                <p>итог</p>
-                <button class="cvrsebtn">перейти к оплате</button>
-              </div>
+            <div class="product-list">
+              <ul>
+                <li class="mb-2" v-for="(item, key) in cartItems"
+                    :key="key">
+                  <router-link :to="{path: `/p/${item._id}`}">
+                    <product-list-preview
+                        v-bind:key="key"
+                        :_id="item._id"
+                        :main-image="item.mainImage"
+                        :price="item.price"
+                        :title="item.title"/>
+                  </router-link>
+                </li>
+              </ul>
+              <hr>
+              <p class="font-roboto font-light text-base">товаров: {{cartCount}}</p>
+              <p class="font-yeseva text-xl mr-5">итог: {{cartTotalPrice}}₽</p>
+              <button class="cvrsebtn">перейти к оплате</button>
+            </div>
           </template>
           <template v-else>
             <p class="font-roboto font-light text-base mt-10">а корзина-то пустая оказывается!</p>
