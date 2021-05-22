@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const { queryParser } = require("express-query-parser");
+require("dotenv").config();
 
 const { routes } = require("./server/routes/_index");
 

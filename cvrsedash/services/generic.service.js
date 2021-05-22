@@ -1,4 +1,4 @@
-import axios from '@nuxtjs/axios'
+import axios from './request.service'
 
 export default class GenericService {
   constructor({ url, name }) {
@@ -6,7 +6,7 @@ export default class GenericService {
     this.name = name
   }
 
-  async fetchALl() {
+  async fetchAll() {
     try {
       const { data } = await axios.get(`${this.url}/`)
       return data
