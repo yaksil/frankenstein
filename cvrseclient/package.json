@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "cvrseclient",
   "version": "0.1.0",
   "private": true,
   "scripts": {

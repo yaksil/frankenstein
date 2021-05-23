@@ -1,8 +1,8 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const { queryParser } = require("express-query-parser");
-require("dotenv").config();
 
 const { routes } = require("./server/routes/_index");
 
@@ -13,7 +13,8 @@ app.use(
     parseBoolean: true,
   })
 );
-const port = process.env.port || 4545;
+const port = process.env.port;
+const host = process.env.host || localhost;
 
 // connect
 async function start() {
@@ -23,8 +24,8 @@ async function start() {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    app.listen(port, () => {
-      console.log(`Server running on ${port}`);
+    app.listen(port, host, () => {
+      console.log(`Server running on localhost:${port}`);
     });
   } catch (e) {
     console.log("err: " + e.message);
@@ -36,7 +37,7 @@ start().then();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-//serves paths automatically, kinda cool
+// serves paths automatically, kinda cool
 routes.forEach((item) => {
   app.use(`/api/${item}`, require(`./server/routes/${item}`));
 });

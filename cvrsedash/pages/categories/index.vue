@@ -1,19 +1,36 @@
 <template>
-  <cvrse-table />
+  <div>
+    <h2>Ктагеории</h2>
+    <nuxt-link to="categories/form">добавить категории гы гы</nuxt-link>
+    <cvrse-table
+      :actions="actions"
+      :columns="columns"
+      :data="categories"
+      @onEdit="handleEdit" />
+  </div>
 </template>
 
 <script>
 import { mapActions, mapGetters } from "vuex";
-import CvrseTable from "@/components/cvrse-table";
+
+// components
+import CvrseTable from "~/components/cvrse-table";
+
+// setup
+import { columns, actions } from "~/pages/categories/setup";
 
 export default {
   name: "categories-page",
   components: {
-    CvrseTable,
+    CvrseTable
   },
   mounted() {
     this.fetchCategories();
   },
+  data: () => ({
+    columns,
+    actions
+  }),
   computed: {
     ...mapGetters({
       categories: "categories/items"
@@ -22,7 +39,10 @@ export default {
   methods: {
     ...mapActions({
       fetchCategories: "categories/fetchAll"
-    })
+    }),
+    handleEdit() {
+      console.log("i am the night");
+    }
   }
 };
 </script>

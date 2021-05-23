@@ -1,15 +1,13 @@
 {
-  "name": "cursemarket",
+  "name": "cvrsedatabase",
+  "private": true,
   "version": "1.0.0",
   "description": "повышаем культуру кодинга в восточной европэ",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "server": "nodemon index.js",
-    "client": "npm run serve --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\" "
+    "server": "nodemon index.js"
   },
-  "keywords": [],
   "author": "yaksil",
   "license": "ISC",
   "dependencies": {
@@ -19,13 +17,11 @@
     "express-promise-router": "^4.1.0",
     "express-query-parser": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.11.17",
-    "ramda": "^0.27.1",
-    "vue": "^3.0.5"
+    "mongoose": "^5.11.17"
   },
   "devDependencies": {
-    "concurrently": "^6.1.0",
     "cors": "^2.8.5",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "prettier": "^2.3.0"
   }
 }
