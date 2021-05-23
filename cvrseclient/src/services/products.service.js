@@ -1,10 +1,7 @@
-import {request} from "@/services/generic.service";
+import { request } from "@/services/generic.service";
 
-const getProduct = (id) => request({url: `p/${id}`, method: 'get'})
+const getProduct = (id) => request({ url: `products/${id}`, method: "get" });
 
-const getProducts = () => request({url: `p/`, method: 'get'})
+const getProducts = () => request({ url: `products/`, method: "get" });
 
-export {
-    getProduct,
-    getProducts
-}
+export { getProduct, getProducts };

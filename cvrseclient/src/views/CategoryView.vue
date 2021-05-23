@@ -32,9 +32,9 @@
 </template>
 
 <script>
-import CvrseHeader from "@/layouts/components/cvrse-header";
+import CvrseHeader from "@/layouts/cvrse-header";
 import {mapGetters, mapActions} from 'vuex';
-import ProductCard from "@/layouts/components/product-card";
+import ProductCard from "@/layouts/product-card";
 
 export default {
   name: "CategoryView",

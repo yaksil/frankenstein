@@ -12,15 +12,15 @@
         <p class="font-roboto font-light text-3xl">начните своё путешествие здесь</p>
         <div class="flex flex-row flex-none mt-5">
           <div class="block mr-5">
-            <router-link to="/a">
-            <p class="font-roboto font-light text-xl">наши мастера</p>
+            <router-link to="/artisans">
+            <p class="font-roboto font-light text-xl hover:bg-cvrse-red">наши мастера</p>
             <img class="journey-thumb" src="https://i.pinimg.com/564x/0b/98/55/0b9855f511b9d5a19265d2a4e8964ee8.jpg"
                  alt="">
             </router-link>
           </div>
           <div class="block">
-            <router-link to="/c">
-            <p class="font-roboto font-light text-xl">категории товаров</p>
+            <router-link to="/categories">
+            <p class="font-roboto font-light text-xl hover:bg-cvrse-green">категории товаров</p>
             <img class="journey-thumb" src="https://i.pinimg.com/564x/b5/7d/d0/b57dd0a6b405d7a9cc807470fcf23f68.jpg"
                  alt="">
             </router-link>
@@ -40,7 +40,7 @@
 
 <script>
 
-import CvrseHeader from "@/layouts/components/cvrse-header";
+import CvrseHeader from "@/layouts/cvrse-header";
 
 export default {
   name: "Home",

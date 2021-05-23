@@ -34,10 +34,10 @@
 </template>
 
 <script>
-import CvrseHeader from "@/layouts/components/cvrse-header";
-import ProductCard from "@/layouts/components/product-card"
+import CvrseHeader from "@/layouts/cvrse-header";
+import ProductCard from "@/layouts/product-card"
 import {mapGetters, mapActions} from 'vuex';
-import ArtisanSidebar from "@/layouts/components/artisan-sidebar"
+import ArtisanSidebar from "@/layouts/artisan-sidebar"
 
 export default {
   name: "ArtisanView",

@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import CvrseFooter from "@/layouts/components/cvrse-footer";
+import CvrseFooter from "@/layouts/cvrse-footer";
 export default {
   name: "login-component",
   components: {CvrseFooter},

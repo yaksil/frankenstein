@@ -1,11 +1,7 @@
-import {request} from "@/services/generic.service";
+import { request } from "@/services/generic.service";
 
-const getUser = (id) => request({url : `u/${id}`, method: 'get'})
+const getUser = (id) => request({ url: `users/${id}`, method: "get" });
 
-const getUsers = () => request({url : `u/`, method: 'get'})
+const getUsers = () => request({ url: `users/`, method: "get" });
 
-
-export {
-    getUser,
-    getUsers
-}
+export { getUser, getUsers };

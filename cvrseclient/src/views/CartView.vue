@@ -12,7 +12,7 @@
               <ul>
                 <li class="mb-2" v-for="(item, key) in cartItems"
                     :key="key">
-                  <router-link :to="{path: `/p/${item._id}`}">
+                  <router-link :to="{path: `/products/${item._id}`}">
                     <product-list-preview
                         v-bind:key="key"
                         :_id="item._id"
@@ -41,10 +41,10 @@
 </template>
 
 <script>
-import CvrseHeader from "@/layouts/components/cvrse-header";
-import CvrseFooter from "@/layouts/components/cvrse-footer";
+import CvrseHeader from "@/layouts/cvrse-header";
+import CvrseFooter from "@/layouts/cvrse-footer";
 import {mapGetters, mapActions, mapMutations} from 'vuex';
-import ProductListPreview from "@/layouts/components/product-list-preview";
+import ProductListPreview from "@/layouts/product-list-preview";
 
 export default {
   name: "CartView",

@@ -1,6 +1,6 @@
 <template>
   <div class="product-card">
-    <router-link :to="{path: `/p/${this._id}`}">
+    <router-link :to="{path: `/products/${this._id}`}">
       <img class="product-image"
            v-bind:style="[this.available ? {'border': '0 black'} : {'filter': 'grayscale(100)'}]"
            :src="mainImage" alt=""/>

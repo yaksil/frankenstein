@@ -1,14 +1,14 @@
 <template>
   <div class="">
     <section id="header">
-      <cvrse-header/>
+      <cvrse-header />
     </section>
     <section id="page">
       <div class="product-page">
         <section id="product-header">
           <div class="container flex flex-col mx-60 mt-10">
             <p class="font-yeseva text-4xl">{{ product.title }}</p>
-            <router-link :to="{path: `/c/${this.product.category_id._id}`}">
+            <router-link :to="{path: `/categories/${this.product.category_id._id}`}">
               <p class="font-roboto font-bold text-base">{{ product.category_id.cat_name }}</p>
             </router-link>
           </div>
@@ -20,11 +20,11 @@
                    v-bind:style="[product.available ? {'border': '0 black'} : {'filter': 'grayscale(100)'}]"
                    alt="">
               <div class="flex flex-col flex-none w-1/3 mx-5" v-cloak>
-                <router-link :to="{path: `/a/${product.artisan_id._id}`}">
+                <router-link :to="{path: `/artisans/${product.artisan_id._id}`}">
                   <artisan-preview
-                      :id="product.artisan_id._id"
-                      :name="product.artisan_id.name"
-                      :avatar="product.artisan_id.avatar"
+                    :id="product.artisan_id._id"
+                    :name="product.artisan_id.name"
+                    :avatar="product.artisan_id.avatar"
                   />
                 </router-link>
                 <p class="font-roboto font-light text-base text-justify">{{ product.description }}</p>
@@ -41,8 +41,8 @@
             </div>
             <div class="gallery" v-cloak>
               <enlargeable-image
-                  v-for="image in product.images" v-bind:key="image"
-                  :src="image" :src_large="image"/>
+                v-for="image in product.images" v-bind:key="image"
+                :src="image" :src_large="image" />
             </div>
           </div>
         </section>
@@ -58,18 +58,18 @@
       </div>
     </section>
     <section id="footer">
-      <cvrse-footer class="cvrsefooter"/>
+      <cvrse-footer class="cvrsefooter" />
     </section>
   </div>
 </template>
 
 <script>
-import {mapActions, mapGetters, mapMutations} from 'vuex';
-import CvrseHeader from "@/layouts/components/cvrse-header";
-import CvrseFooter from "@/layouts/components/cvrse-footer";
-import EnlargeableImage from '@/layouts/components/enlargeable-image'
-import ReviewCard from "@/layouts/components/review-card";
-import ArtisanPreview from "@/layouts/components/artisan-preview";
+import { mapActions, mapGetters, mapMutations } from "vuex";
+import CvrseHeader from "@/layouts/cvrse-header";
+import CvrseFooter from "@/layouts/cvrse-footer";
+import EnlargeableImage from "@/layouts/enlargeable-image";
+import ReviewCard from "@/layouts/review-card";
+import ArtisanPreview from "@/layouts/artisan-preview";
 
 export default {
   name: "ProductView",
@@ -86,32 +86,32 @@ export default {
   props: {
     _id: {
       type: String
-    },
+    }
   },
   computed: {
     ...mapGetters([
-      'product',
-      'cartItems'
+      "product",
+      "cartItems"
     ]),
-    cartItemsIds: ({cartItems}) => cartItems.map(({_id}) => _id),
+    cartItemsIds: ({ cartItems }) => cartItems.map(({ _id }) => _id),
     inCart() {
       return this.cartItemsIds.includes(this.product._id);
     },
 
     // TODO button cant be clicked if not available
     isAvailable() {
-      return this.product.available
+      return this.product.available;
     }
   },
   methods: {
     ...mapActions([
-      'fetchProduct',
+      "fetchProduct"
     ]),
     ...mapMutations([
-      'addToCart',
+      "addToCart"
     ])
-  },
-}
+  }
+};
 </script>
 
 <style scoped>

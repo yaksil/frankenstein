@@ -71,8 +71,8 @@
 </template>
 
 <script>
-import CvrseHeader from "@/layouts/components/cvrse-header";
-import CvrseFooter from "@/layouts/components/cvrse-footer";
+import CvrseHeader from "@/layouts/cvrse-header";
+import CvrseFooter from "@/layouts/cvrse-footer";
 
 export default {
   name: "FAQ",

@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import CvrseHeader from "@/layouts/components/cvrse-header";
+import CvrseHeader from "@/layouts/cvrse-header";
 
 export default {
   name: "Search",
