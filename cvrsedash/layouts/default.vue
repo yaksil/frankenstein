@@ -1,9 +1,9 @@
 <template>
-  <div class="app">
-    <nav-bar :menu="menu">
-    </nav-bar>
-    <div class="content">
-      <main>
+  <div class="flex h-screen">
+    <cvrse-nav :menu="menu"
+              @onLogout="handleLogout" />
+    <div class="flex-1 flex flex-col overflow-hidden">
+      <main class="flex-1 overflow-x-hidden overflow-y-auto">
         <Nuxt />
       </main>
     </div>
@@ -14,26 +14,18 @@
 import menu from "./setup";
 
 export default {
-  name: "default-layout",
+  name: "DefaultLayout",
   data: () => ({
     menu
   }),
   components: {
-    NavBar: () => import("@/components/nav-bar")
+    CvrseNav: () => import("@/components/layouts/Navigation/Nav"),
+  },
+  methods: {
+    async handleLogout() {
+      localStorage.clear();
+      this.$router.push("/login");
+    }
   }
 };
 </script>
-
-<style>
-.app {
-  height: 100vh;
-  width: 100vw;
-  margin: 0;
-  display: flex;
-  flex-direction: row;
-}
-
-.content {
-  padding: 2rem;
-}
-</style>

@@ -2,7 +2,7 @@ import axios from './request.service'
 
 export default class GenericService {
   constructor({ url, name }) {
-    this.url = url
+    this.url = url // categories
     this.name = name
   }
 
@@ -14,11 +14,10 @@ export default class GenericService {
       throw {
         err,
         error: true,
-        message: `Error on fetchAll at ${this.name}`,
+        message: `${this.name} on fetch all something wrong`,
       }
     }
   }
-
   async fetchOne(id) {
     try {
       const { data } = await axios.get(`${this.url}/${id}`)
@@ -27,11 +26,10 @@ export default class GenericService {
       throw {
         err,
         error: true,
-        message: `Error on fetchOne at ${this.name}`,
+        message: `${this.name} with fetchOne request something wrong`,
       }
     }
   }
-
   async create(payload) {
     try {
       const { data } = await axios.post(`${this.url}/`, payload)
@@ -40,12 +38,11 @@ export default class GenericService {
       throw {
         err,
         error: true,
-        message: `Error on create at ${this.name}`,
+        message: `${this.name} with create request something wrong`,
       }
     }
   }
-
-  async update(payload, id) {
+  async update(id, payload) {
     try {
       const { data } = await axios.put(`${this.url}/${id}`, payload)
       return data
@@ -53,11 +50,10 @@ export default class GenericService {
       throw {
         err,
         error: true,
-        message: `Error on update at ${this.name}`,
+        message: `${this.name} with update request something wrong`,
       }
     }
   }
-
   async delete(id) {
     try {
       await axios.delete(`${this.url}/${id}`)
@@ -65,7 +61,7 @@ export default class GenericService {
       throw {
         err,
         error: true,
-        message: `Error on delete at ${this.name}`,
+        message: `${this.name} with delete request something wrong`,
       }
     }
   }

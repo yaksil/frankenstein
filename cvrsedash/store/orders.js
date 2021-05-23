@@ -2,8 +2,8 @@ import crudStore from './generic'
 
 export default {
   ...crudStore({
-    url: 'categories',
-    name: 'Categories',
-    keyName: 'category',
+    url: 'orders',
+    name: 'Orders',
+    keyName: 'order',
   }),
 }

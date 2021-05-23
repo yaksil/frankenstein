@@ -1,23 +1,18 @@
 <template>
-  <Page>
-    <div class="row">
-      <div class="col-md-9">
-        <card>
-          <CrudForm
-            v-if="model"
-            :form-schema="schema"
-            :form-model="model"
-            :title="config.formTitle"
-            @on-submit="onFormSubmit"
-          />
-          <p class="text-danger">
-            {{ error }}
-          </p>
-        </card>
-      </div>
-      <div class="col-md-3"></div>
-    </div>
-  </Page>
+  <form-page-wrapper
+    :title="config.formTitle"
+    :description="config.formDescription"
+  >
+    <crud-form
+      v-if="model"
+      :form-schema="schema"
+      :form-model="model"
+      @on-submit="onFormSubmit"
+    />
+    <p class="text-danger">
+      {{ error }}
+    </p>
+  </form-page-wrapper>
 </template>
 
 <script>
@@ -33,17 +28,19 @@ import { relationsMixin } from '@/mixins/relation.mixin'
 
 export default {
   name: config.formName,
+  middleware: 'auth',
   mixins: [relationsMixin],
   components: {
     CrudForm: () => import('@/components/CrudForm'),
     Card: () => import('@/components/Card'),
     Page: () => import('@/components/Page'),
+    FormPageWrapper: () => import('@/components/FormPageWrapper'),
   },
   computed: {
     ...mapGetters({
       item: `${config.crudName}/item`,
       error: `${config.crudName}/itemError`,
-      products: 'products/items',
+      categories: 'categories/items',
     }),
     isUpdating: ({
       $route: {
@@ -57,8 +54,8 @@ export default {
     config,
   }),
   async mounted() {
-    await this.fetchProducts()
-    this.setFields({ fieldKey: 'products', values: this.products })
+    await this.fetchCategories()
+    this.setFields({ fieldKey: 'category', values: this.categories })
 
     if (this.isUpdating) {
       await this.fetchItem(this.$route.params.id)
@@ -78,7 +75,7 @@ export default {
       updateItem: `${config.crudName}/update`,
 
       // bl
-      fetchProducts: 'products/fetchAll',
+      fetchCategories: 'categories/fetchAll',
     }),
     setModel() {
       this.model = {
@@ -88,7 +85,7 @@ export default {
     async onItemUpdate() {
       const updatedModel = {
         ...this.model,
-        products: this.model.products.map((product) => product._id),
+        category: this.model.category.id,
       }
       await this.updateItem({
         id: this.$route.params.id,

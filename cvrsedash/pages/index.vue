@@ -1,15 +1,14 @@
 <template>
   <div class="container">
-    <div>
-      <Logo />
-    </div>
+    <Logo />
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: 'Home',
+  middleware: 'auth',
+}
 </script>
 
-<style>
-
-</style>
+<style></style>

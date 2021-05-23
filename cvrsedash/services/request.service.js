@@ -18,10 +18,7 @@ let service = {}
 
 reqMethods.forEach((method) => {
   service[method] = function () {
-    if (!client)
-      throw new Error(
-        'somewhere over the rainbow............axios is not installed........'
-      )
+    if (!client) throw new Error('Axios not installed')
     return client[method].apply(null, arguments)
   }
 })

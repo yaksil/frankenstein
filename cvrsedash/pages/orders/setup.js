@@ -1,13 +1,15 @@
 export const config = {
-  name: 'Категории',
-  crudName: 'categories',
-  singleName: 'Категорию',
-  pageName: 'CategoryPage',
-  formName: 'CategoryForm',
-  formTitle: 'Форма Категории',
+  name: 'Заказы',
+  crudName: 'orders',
+  singleName: 'Заказ',
+  pageName: 'OrderPage',
 }
 
-export const columns = [{ key: 'title', name: 'Название Категории' }]
+export const columns = [
+  { key: 'fullname', name: 'Имя покупателя' },
+  { key: 'email', name: 'Почта' },
+  { key: 'phone', name: 'Номер Телефона' },
+]
 
 export const actions = [
   {

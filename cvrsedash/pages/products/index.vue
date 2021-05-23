@@ -5,8 +5,7 @@
         tag="nuxt-link"
         icon="icwt-plus"
         :to="`${config.crudName}/form`"
-        rounded
-      >
+        rounded>
         Добавить {{ config.singleName }}
       </icwt-button>
     </div>

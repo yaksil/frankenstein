@@ -1,6 +1,9 @@
 module.exports = {
+  future: {
+    // removeDeprecatedGapUtilities: true,
+    // purgeLayersByDefault: true,
+  },
   purge: [],
-  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
       fontFamily: {
@@ -11,11 +14,10 @@ module.exports = {
       colors: {
         'cvrse-red': '#B44545',
         'cvrse-green': '#219589',
+        'dashboard-bg': '#f4f8fb',
       },
     },
   },
-  variants: {
-    extend: {},
-  },
+  variants: {},
   plugins: [],
 }

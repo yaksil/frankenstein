@@ -100,7 +100,7 @@ const crudStore = ({ name, url, keyName }) => {
         state.itemError = err
       },
 
-      deleteItemSuccess() {},
+      deleteItemSuccess() { },
       deleteItemFail(state, err) {
         state.itemError = err
       },
