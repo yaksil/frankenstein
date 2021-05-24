@@ -1,10 +1,10 @@
 export const config = {
-  name: 'Категории',
-  crudName: 'categories',
-  singleName: 'категорию',
-  pageName: 'CategoryPage',
-  formName: 'CategoryForm',
-  formTitle: 'Форма Категории',
+  name: 'Пользователи',
+  crudName: 'users',
+  singleName: 'мастера',
+  pageName: 'UserPage',
+  formName: 'UserForm',
+  formTitle: 'Форма мастера',
 }
 
 export const columns = [{ key: 'cat_name', name: 'Название Категории' }]

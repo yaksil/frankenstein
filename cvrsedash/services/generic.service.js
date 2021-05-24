@@ -2,7 +2,7 @@ import axios from './request.service'
 
 export default class GenericService {
   constructor({ url, name }) {
-    this.url = url // categories
+    this.url = url
     this.name = name
   }
 
@@ -26,7 +26,7 @@ export default class GenericService {
       throw {
         err,
         error: true,
-        message: `${this.name} with fetchOne request something wrong`,
+        message: `${this.name} with fetchOne request something wrong`, // FIXME krinj
       }
     }
   }

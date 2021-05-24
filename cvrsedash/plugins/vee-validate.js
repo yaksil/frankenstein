@@ -8,5 +8,5 @@ extend('required', {
 
 extend('email', {
   ...email,
-  message: 'Введите корректный емейл.',
+  message: 'Введите корректный мейл.',
 })

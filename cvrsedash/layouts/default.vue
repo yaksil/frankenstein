@@ -19,7 +19,7 @@ export default {
     menu
   }),
   components: {
-    CvrseNav: () => import("@/components/layouts/Navigation/Nav"),
+    CvrseNav: () => import("~/components/Navigation/cvrse-navigator"),
   },
   methods: {
     async handleLogout() {

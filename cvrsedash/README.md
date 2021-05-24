@@ -1,4 +1,5 @@
-# mevn-dashboard
+# cvrsedash
+проект по принципу компота ака художественный фильм спиздили
 
 ## Build Setup
 

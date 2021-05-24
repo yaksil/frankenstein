@@ -1,7 +1,7 @@
 <template>
   <nuxt-link
-    class="flex items-center mt-2 py-3 px-6 text-gray-900 font-roboto font-light hover:text-white hover:bg-cvrse-green"
-    :class="{'bg-cvrse-red font-yeseva text-white': active}"
+    class="flex items-center mt-2 py-3 px-6 text-gray-900 font-roboto font-light hover:text-white hover:bg-black"
+    :class="{'bg-cvrse-red font-yeseva text-black': active}"
     :to="to">
     <slot />
   </nuxt-link>
@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: "NavItem",
+  name: "cvrse-navigator-item",
   props: {
     to: {
       type: String,

@@ -7,12 +7,12 @@
     :class="{
       [`bg-${bg}-600`]: true,
       [`hover:bg-${bg}-500`]: true,
-      [`font-${font}`]: true,
-      [`text-${color}`]: true,
-      'rounded-md': rounded,
+      [`font-roboto`]: true,
+      [`text-white`]: true,
+      'rounded-full': rounded,
     }"
   >
-    <span class="flex items-center mr-2">
+    <span class="flex items-center">
       <slot name="icon" />
     </span>
     <slot />
@@ -33,7 +33,7 @@ export default {
     },
     bg: {
       type: String,
-      default: 'indigo',
+      default: 'gray',
     },
     font: {
       type: String,

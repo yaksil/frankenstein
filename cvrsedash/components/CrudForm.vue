@@ -10,7 +10,7 @@
       />
 
       <div class="max-w flex justify-center">
-        <icwt-button rounded type="submit">Подтвердить</icwt-button>
+        <icwt-button rounded type="submit">сохранить</icwt-button>
       </div>
     </form>
   </div>

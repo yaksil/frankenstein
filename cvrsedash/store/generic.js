@@ -1,6 +1,6 @@
 import GenericService from '@/services/generic.service'
 
-const crudStore = ({ name, url, keyName }) => {
+const crudStore = ({ name, url }) => {
   const genericService = new GenericService({
     name,
     url,
@@ -100,7 +100,7 @@ const crudStore = ({ name, url, keyName }) => {
         state.itemError = err
       },
 
-      deleteItemSuccess() { },
+      deleteItemSuccess() {},
       deleteItemFail(state, err) {
         state.itemError = err
       },

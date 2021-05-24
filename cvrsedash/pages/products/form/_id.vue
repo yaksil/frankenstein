@@ -1,8 +1,7 @@
 <template>
   <form-page-wrapper
     :title="config.formTitle"
-    :description="config.formDescription"
-  >
+    :description="config.formDescription">
     <crud-form
       v-if="model"
       :form-schema="schema"
@@ -27,7 +26,7 @@ import { config } from '../setup'
 import { relationsMixin } from '@/mixins/relation.mixin'
 
 export default {
-  name: config.formName,
+  name: 'ProductForm',
   middleware: 'auth',
   mixins: [relationsMixin],
   components: {
@@ -55,7 +54,7 @@ export default {
   }),
   async mounted() {
     await this.fetchCategories()
-    this.setFields({ fieldKey: 'category', values: this.categories })
+    this.setFields({ fieldKey: 'category_id', values: this.categories })
 
     if (this.isUpdating) {
       await this.fetchItem(this.$route.params.id)
@@ -70,9 +69,9 @@ export default {
   methods: {
     ...mapActions({
       // generic
-      createItem: `${config.crudName}/create`,
-      fetchItem: `${config.crudName}/fetchOne`,
-      updateItem: `${config.crudName}/update`,
+      createItem: `products/create`,
+      fetchItem: `products/fetchOne`,
+      updateItem: `products/update`,
 
       // bl
       fetchCategories: 'categories/fetchAll',
@@ -85,7 +84,7 @@ export default {
     async onItemUpdate() {
       const updatedModel = {
         ...this.model,
-        category: this.model.category.id,
+        // category_id: this.model.category_id.id, //FIXME vot zdes vot vyser s idshnikami
       }
       await this.updateItem({
         id: this.$route.params.id,

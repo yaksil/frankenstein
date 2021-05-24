@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto px-6 py-8">
-    <h3 class="text-gray-700 text-2xl font-medium">
+    <h3 class="text-white text-4xl font-yeseva bg-black">
       {{ title }}
     </h3>
     <div class="my-6">
@@ -20,3 +20,4 @@ export default {
   },
 }
 </script>
+

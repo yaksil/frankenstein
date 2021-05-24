@@ -2,11 +2,9 @@
   <div class="div">
     <div class="sidenav">
       <div class="login-main-text">
-        <h2>
-          Application<br />
-          Login Page
-        </h2>
-        <p>Login or register from here to access.</p>
+        <p class="font-curse text-6xl">cvrse—</p>
+        <p class="font-curse text-6xl">dashboard</p>
+        <p class="font-roboto font-light text-base">hint: авторизируйтесь для доступа к админ-панели</p>
       </div>
     </div>
     <div class="main">
@@ -17,7 +15,7 @@
 
 <style scoped>
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Light', monospace;
 }
 
 .main-head {
@@ -27,14 +25,13 @@ body {
 
 .sidenav {
   height: 100%;
-  background-color: #000;
   overflow-x: hidden;
   padding-top: 20px;
+  @apply bg-black
 }
 
 .main {
   padding: 0px 10px;
-
   display: flex;
   justify-content: center;
   align-items: center;

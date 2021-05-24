@@ -2,15 +2,15 @@ export const schema = {
   fields: [
     {
       type: 'input',
-      label: 'Название игры',
+      label: 'Название продукта',
       model: 'title',
-      placeholder: 'Введите название игры',
+      placeholder: 'Введите название продукта',
       inputType: 'text',
       styleClasses: 'col-md-6',
     },
     {
       type: 'vueMultiSelect',
-      model: 'category',
+      model: 'category_id',
       label: 'Категория',
       styleClasses: 'col-md-6',
       placeholder: 'Добавить категорию',
@@ -27,17 +27,17 @@ export const schema = {
     },
     {
       type: 'input',
-      label: 'Стоимость игры',
+      label: 'Стоимость',
       model: 'price',
-      placeholder: 'Введите стоимость игры',
+      placeholder: 'Введите стоимость',
       inputType: 'text',
       styleClasses: 'col-md-6',
     },
     {
       type: 'textArea',
-      label: 'Описание игры',
+      label: 'Описание продукта',
       model: 'description',
-      placeholder: 'Опишите игру',
+      placeholder: 'Опишите продукт',
       hint: 'Max 500 characters',
 
       rows: 10,
@@ -46,7 +46,7 @@ export const schema = {
     {
       type: 'input',
       label: 'Количество',
-      model: 'amount',
+      model: 'in_stock',
       placeholder: 'Введите кол-во доступных продуктов',
       inputType: 'text',
       styleClasses: 'col-md-6',
@@ -54,7 +54,7 @@ export const schema = {
     {
       type: 'input',
       label: 'Изображение',
-      model: 'imageUrl',
+      model: 'mainImage',
       placeholder: 'Введите ссылку на картинку',
       inputType: 'text',
       styleClasses: 'col-md-6',
@@ -66,7 +66,7 @@ export const defaultForm = {
   title: '',
   description: '',
   price: 0,
-  amount: 0,
-  imageUrl: '',
-  category: '',
+  in_stock: 0,
+  mainImage: '',
+  category_id: '',
 }

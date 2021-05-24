@@ -6,7 +6,7 @@
         icon="icwt-plus"
         :to="`${config.crudName}/form`"
         rounded>
-        Добавить {{ config.singleName }}
+        добавить {{ config.singleName }}
       </icwt-button>
     </div>
     <TablePageWrapper>
@@ -29,7 +29,7 @@ import { columns, actions, config } from './setup'
 import { crudMixin } from '@/mixins/crud.mixin'
 
 export default {
-  name: config.pageName,
+  name: 'ProductPage',
   middleware: 'auth',
   mixins: [crudMixin({ config })],
   components: {

@@ -1,19 +1,23 @@
 const menu = [
   {
-    name: 'Главная',
-    to: '/home',
+    name: 'Мастера',
+    to: '/artisans',
   },
   {
     name: 'Категории',
     to: '/categories',
   },
   {
-    name: 'Товары',
+    name: 'Заказы',
+    to: '/orders',
+  },
+  {
+    name: 'Продукты',
     to: '/products',
   },
   {
-    name: 'Заказы',
-    to: '/orders',
+    name: 'Пользователи',
+    to: '/users',
   },
 ]
 

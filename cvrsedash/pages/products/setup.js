@@ -1,7 +1,7 @@
 export const config = {
   name: 'Продукты',
   crudName: 'products',
-  singleName: 'Продукт',
+  singleName: 'продукт',
   pageName: 'ProductPage',
   formName: 'ProductForm',
   formTitle: 'Форма продукта',
@@ -19,7 +19,7 @@ export const actions = [
   {
     bg: 'yellow',
     color: 'white',
-    label: 'Изменить',
+    label: 'изменить',
     emit: 'onEdit',
     actionKey: '_id',
   },
@@ -27,7 +27,7 @@ export const actions = [
     bg: 'red',
     color: 'white',
     emit: 'onDelete',
+    label: 'удалить',
     actionKey: '_id',
-    icon: 'icwt-delete',
   },
 ]

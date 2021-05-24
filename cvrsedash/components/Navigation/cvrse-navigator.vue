@@ -2,16 +2,16 @@
   <div class="nav-main">
     <div class="fixed z-30 inset-y-0 left-0 w-64 bg-gray-100 overflow-y-auto lg:static lf:inset-0">
       <div class="flex items-center justify-center mt-8">
-        <nuxt-link class="no-underline hover:bg-cvrse-green" to="/">
+        <nuxt-link class="no-underline hover:bg-black hover:text-white" to="/">
           <div class="flex items-center">
             <span class="text-black text-3xl font-curse m-4"> cvrse— dashboard </span>
           </div>
         </nuxt-link>
       </div>
       <nav class="mt-10">
-        <nav-item v-for="(item, key) in menu" :to="item.to" :key="key">
+        <cvrse-navigator-item v-for="(item, key) in menu" :to="item.to" :key="key">
           {{ item.name }}
-        </nav-item>
+        </cvrse-navigator-item>
         <div class="exit">
           <button
             @click="$emit('onLogout')"
@@ -26,7 +26,7 @@
 
 <script>
 export default {
-  name: "Nav",
+  name: "cvrse-navigator",
   props: {
     menu: {
       type: Array,
@@ -34,13 +34,13 @@ export default {
     }
   },
   components: {
-    NavItem: () => import("./NavItem")
+    CvrseNavigatorItem: () => import('./cvrse-navigator-item')
   }
 };
 </script>
 
 <style scoped>
 .exit {
-  margin-top: 20rem;
+  margin-top: 24rem;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <Logo />
+  <div class="container mx-auto mt-20">
+    <p class="font-roboto font-light text-5xl">Это — главная страница Административной панели.</p>
   </div>
 </template>
 
