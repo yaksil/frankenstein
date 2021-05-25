@@ -3,14 +3,14 @@ export const schema = {
     {
       type: 'input',
       label: 'Название категории',
-      model: 'title',
+      model: 'cat_name',
       placeholder: 'Введите название Категории',
       inputType: 'text',
       styleClasses: 'col-md-6',
     },
-    {
+    /*{
       type: 'vueMultiSelect',
-      model: 'products',
+      model: 'product_inventory',
       label: 'Продукты',
       styleClasses: 'col-md-6',
       placeholder: 'Добавить продукты',
@@ -24,14 +24,13 @@ export const schema = {
         hideSelected: true,
       },
       values: [],
-    },
+    },*/
     {
       type: 'textArea',
       label: 'Описание категории',
-      model: 'description',
+      model: 'cat_desc',
       placeholder: 'Введи описание категории',
       hint: 'Максимально 500 символов',
-
       rows: 10,
       styleClasses: 'col-md-12',
     },
@@ -39,7 +38,7 @@ export const schema = {
 }
 
 export const defaultForm = {
-  title: '',
-  description: '',
-  products: [],
+  cat_name: '',
+  // product_inventory: [],
+  cat_desc: '',
 }

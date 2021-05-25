@@ -7,7 +7,14 @@ const routes = [
   {
     path: "*",
     name: "404-view",
-    component: () => import(/* webpackChunkName: "NOTFOUND" */ "@/views/404View"),
+    component: () =>
+      import(/* webpackChunkName: "NOTFOUND" */ "@/views/404View"),
+  },
+  {
+    path: "/login",
+    name: "login-view",
+    component: () =>
+      import(/* webpackChunkName: "Login" */ "@/views/LoginView"),
   },
   {
     path: "/faq",

@@ -7,21 +7,11 @@ export const config = {
   formTitle: 'Форма мастера',
 }
 
-export const columns = [{ key: 'cat_name', name: 'Название Категории' }]
-
-export const actions = [
-  {
-    bg: 'yellow',
-    color: 'white',
-    label: 'Изменить',
-    emit: 'onEdit',
-    actionKey: '_id',
-  },
-  {
-    bg: 'red',
-    color: 'white',
-    label: 'Удалить',
-    emit: 'onDelete',
-    actionKey: '_id',
-  },
+export const columns = [
+  { key: '_id', name: 'ID' },
+  { key: 'name', name: 'Имя' },
+  { key: 'location', name: 'Город' },
+  { key: 'description', name: 'Описание' },
 ]
+
+export const actions = []

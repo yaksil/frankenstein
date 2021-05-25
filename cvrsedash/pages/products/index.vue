@@ -1,13 +1,7 @@
 <template>
   <Page :title="config.name">
     <div class="flex">
-      <icwt-button
-        tag="nuxt-link"
-        icon="icwt-plus"
-        :to="`${config.crudName}/form`"
-        rounded>
-        добавить {{ config.singleName }}
-      </icwt-button>
+      <p class="font-roboto font-italic font-light">hint: Это пользовательские данные. Вы не можете их редактировать.</p>
     </div>
     <TablePageWrapper>
       <icwt-table

@@ -29,11 +29,11 @@ import { schema, defaultForm } from './fields'
 import { config } from '../setup'
 
 // Mixins
-import { relationsMixin } from '@/mixins/relation.mixin'
+// import { relationsMixin } from '@/mixins/relation.mixin'
 
 export default {
   name: config.formName,
-  mixins: [relationsMixin],
+  // mixins: [relationsMixin],
   components: {
     CrudForm: () => import('@/components/CrudForm'),
     Card: () => import('@/components/Card'),
@@ -43,7 +43,6 @@ export default {
     ...mapGetters({
       item: `${config.crudName}/item`,
       error: `${config.crudName}/itemError`,
-      products: 'products/items',
     }),
     isUpdating: ({
       $route: {
@@ -57,8 +56,8 @@ export default {
     config,
   }),
   async mounted() {
-    await this.fetchProducts()
-    this.setFields({ fieldKey: 'products', values: this.products })
+    // await this.fetchProducts()
+    // this.setFields({ fieldKey: 'product_inventory', values: this.products })
 
     if (this.isUpdating) {
       await this.fetchItem(this.$route.params.id)
@@ -78,7 +77,7 @@ export default {
       updateItem: `${config.crudName}/update`,
 
       // bl
-      fetchProducts: 'products/fetchAll',
+      // fetchProducts: 'products/fetchAll',
     }),
     setModel() {
       this.model = {
@@ -88,7 +87,7 @@ export default {
     async onItemUpdate() {
       const updatedModel = {
         ...this.model,
-        products: this.model.products.map((product) => product._id),
+        // products: this.model.products.map((product) => product._id),
       }
       await this.updateItem({
         id: this.$route.params.id,

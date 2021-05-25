@@ -1,14 +1,8 @@
 <template>
   <Page :title="config.name">
     <div class="flex">
-      <icwt-button
-        tag="nuxt-link"
-        icon="icwt-plus"
-        :to="`${config.crudName}/form`"
-        rounded
-      >
-        Добавить {{ config.singleName }}
-      </icwt-button>
+      <p class="font-roboto font-italic font-light">hint: Это пользовательские данные. Вы не можете их
+        редактировать.</p>
     </div>
     <TablePageWrapper>
       <icwt-table
@@ -24,32 +18,34 @@
 
 <script>
 // setup
-import { columns, actions, config } from './setup'
+import { columns, actions, config } from "./setup";
 
 // Mixins
-import { crudMixin } from '@/mixins/crud.mixin'
+import { crudMixin } from "@/mixins/crud.mixin";
 
 export default {
   name: config.pageName,
-  middleware: 'auth',
+  middleware: "auth",
   mixins: [crudMixin({ config })],
   components: {
-    Page: () => import('@/components/Page'),
-    Icon: () => import('@/components/icon/Icon'),
-    IcwtButton: () => import('@/components/Button'),
+    Page: () => import("@/components/Page"),
+    Icon: () => import("@/components/icon/Icon"),
+    IcwtButton: () => import("@/components/Button")
   },
   data: () => ({
     columns,
     actions,
-    config,
+    config
   }),
+  computed: {},
   methods: {
     handleEdit({ id }) {
-      this.$router.push(`/${config.crudName}/form/${id}`)
-    },
+      this.$router.push(`/${config.crudName}/form/${id}`);
+    }
+
   },
   mounted() {
-    this.fetchItems()
-  },
-}
+    this.fetchItems();
+  }
+};
 </script>

@@ -7,11 +7,14 @@ export const config = {
   formTitle: 'Форма Категории',
 }
 
-export const columns = [{ key: 'cat_name', name: 'Название Категории' }]
+export const columns = [
+  { key: 'cat_name', name: 'Название' },
+  { key: 'cat_desc', name: 'Описание' },
+]
 
 export const actions = [
   {
-    bg: 'yellow',
+    bg: 'teal',
     color: 'white',
     label: 'Изменить',
     emit: 'onEdit',

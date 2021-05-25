@@ -4,7 +4,7 @@
       <div class="login-main-text">
         <p class="font-curse text-6xl">cvrse—</p>
         <p class="font-curse text-6xl">dashboard</p>
-        <p class="font-roboto font-light text-base">hint: авторизируйтесь для доступа к админ-панели</p>
+        <p class="font-roboto font-light font-italic text-base">hint: авторизируйтесь для доступа к админ-панели</p>
       </div>
     </div>
     <div class="main">
