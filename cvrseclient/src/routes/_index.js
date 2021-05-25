@@ -5,16 +5,16 @@ Vue.use(VueRouter);
 
 const routes = [
   {
+    path: "/",
+    name: "login-view",
+    component: () =>
+      import(/* webpackChunkName: "Login" */ "@/views/LoginView"),
+  },
+  {
     path: "*",
     name: "404-view",
     component: () =>
       import(/* webpackChunkName: "NOTFOUND" */ "@/views/404View"),
-  },
-  {
-    path: "/login",
-    name: "login-view",
-    component: () =>
-      import(/* webpackChunkName: "Login" */ "@/views/LoginView"),
   },
   {
     path: "/faq",
@@ -22,9 +22,12 @@ const routes = [
     component: () => import(/* webpackChunkName: "FAQ" */ "@/views/FAQ"),
   },
   {
-    path: "/",
+    path: "/home",
     name: "Home",
     component: () => import(/* webpackChunkName: "Home" */ "@/views/Home"),
+    meta: {
+      requiresAuth: true,
+    },
   },
   {
     path: "/search",
@@ -35,6 +38,12 @@ const routes = [
     path: "/cart",
     name: "cart",
     component: () => import(/* webpackChunk: "Cart-page" */ "@/views/CartView"),
+  },
+  {
+    path: "/profile",
+    name: "profile-view",
+    component: () =>
+      import(/* webpackChunkName: "Profile-view" */ "@/views/ProfileView"),
   },
   {
     path: "/products/:_id",

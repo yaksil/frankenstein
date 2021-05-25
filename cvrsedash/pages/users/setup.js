@@ -13,4 +13,12 @@ export const columns = [
   { key: 'phone', name: 'номер телефона' },
 ]
 
-export const actions = []
+export const actions = [
+  {
+    bg: 'red',
+    color: 'white',
+    label: 'Удалить',
+    emit: 'onDelete',
+    actionKey: '_id',
+  },
+]

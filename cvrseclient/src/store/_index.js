@@ -6,6 +6,7 @@ import category from "@/store/category";
 import review from "@/store/review";
 import cart from "@/store/cart";
 import auth from "@/store/auth";
+import user from "@/store/user";
 
 Vue.use(Vuex);
 export default new Vuex.Store({
@@ -16,5 +17,6 @@ export default new Vuex.Store({
     cart,
     product,
     review,
+    user,
   },
 });

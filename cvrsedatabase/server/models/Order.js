@@ -20,10 +20,12 @@ const order = new mongoose.Schema({
 
   // make it eh product refs for now
   // idk how it's gonna work anyways
-  item: {
-    type: String,
-    ref: 'Product',
-  },
+  items: [
+    {
+      type: String,
+      ref: 'Product',
+    },
+  ],
 
   // shipping info b like
   shipping: {

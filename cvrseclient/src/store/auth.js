@@ -31,7 +31,6 @@ const actions = {
       commit("auth_success", res.data);
     } catch (err) {
       commit("auth_failed");
-      console.log(email, password);
     }
   },
   async logout() {},

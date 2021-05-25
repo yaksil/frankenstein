@@ -8,7 +8,7 @@ export const schema = {
       inputType: 'text',
       styleClasses: 'col-md-6',
     },
-    /*{
+    {
       type: 'vueMultiSelect',
       model: 'product_inventory',
       label: 'Продукты',
@@ -24,13 +24,21 @@ export const schema = {
         hideSelected: true,
       },
       values: [],
-    },*/
+    },
+    {
+      type: 'input',
+      label: 'Ссылка на картинку',
+      model: 'thumbnail',
+      placeholder: 'Вставьте ссылку на картинку',
+      inputType: 'text',
+      styleClasses: 'col-md-6',
+    },
     {
       type: 'textArea',
       label: 'Описание категории',
       model: 'cat_desc',
       placeholder: 'Введи описание категории',
-      hint: 'Максимально 500 символов',
+      // hint: 'Максимально 500 символов',
       rows: 10,
       styleClasses: 'col-md-12',
     },

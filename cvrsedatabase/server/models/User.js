@@ -17,6 +17,10 @@ const user = new mongoose.Schema({
     type: String,
     default: '',
   },
+  artisan_id: {
+    type: String,
+    ref: 'Artisan',
+  },
   //billing: {} // TODO billing model, check contacts on creating order
 })
 

@@ -5,13 +5,6 @@ import Store from "./store/_index";
 import "./assets/tailwind.css";
 import router from "@/routes/_index";
 
-/*Vue.prototype.$http = Axios;
-
-const token = localStorage.getItem("user-token");
-if (token) {
-  Vue.prototype.$http.defaults.headers.common["Authorization"] = token;
-}*/
-
 Vue.config.productionTip = false;
 Vue.use(Vuex);
 

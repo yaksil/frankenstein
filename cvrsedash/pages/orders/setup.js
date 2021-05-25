@@ -13,4 +13,12 @@ export const columns = [
   { key: 'shipping', name: 'адрес доставки' },
 ]
 
-export const actions = []
+export const actions = [
+  {
+    bg: 'red',
+    color: 'white',
+    label: 'Удалить',
+    emit: 'onDelete',
+    actionKey: '_id',
+  },
+]

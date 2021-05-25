@@ -1,29 +1,29 @@
 <template>
   <div class="artisan-view">
     <section id="header">
-      <cvrse-header/>
+      <cvrse-header />
     </section>
     <section id="page">
       <div class="artisan-info">
         <artisan-sidebar
-            v-if="artisan.length !== 0"
-            :_id="artisan._id"
-            :name="artisan.name"
-            :location="artisan.location"
-            :description="artisan.description"
-            :avatar="artisan.avatar"
-            :inventory="artisan.inventory"
+          v-if="artisan.length !== 0"
+          :_id="artisan._id"
+          :name="artisan.name"
+          :location="artisan.location"
+          :description="artisan.description"
+          :avatar="artisan.avatar"
+          :inventory="artisan.inventory"
         />
         <div class="artisan-inventory">
           <product-card
-              v-for="(product, key) in artisan.inventory"
-              :key="key"
-              :available="product.available"
-              :_id="product._id"
-              :title="product.title"
-              :price="product.price"
-              :mainImage="product.mainImage"
-              :description="product.description"
+            v-for="(product, key) in artisan.inventory"
+            :key="key"
+            :available="product.available"
+            :_id="product._id"
+            :title="product.title"
+            :price="product.price"
+            :mainImage="product.mainImage"
+            :description="product.description"
           />
         </div>
       </div>
@@ -35,9 +35,9 @@
 
 <script>
 import CvrseHeader from "@/layouts/cvrse-header";
-import ProductCard from "@/layouts/product-card"
-import {mapGetters, mapActions} from 'vuex';
-import ArtisanSidebar from "@/layouts/artisan-sidebar"
+import ProductCard from "@/layouts/product-card";
+import { mapGetters, mapActions } from "vuex";
+import ArtisanSidebar from "@/layouts/artisan-sidebar";
 
 export default {
   name: "ArtisanView",
@@ -53,19 +53,19 @@ export default {
   },
   mounted() {
     //pass props from some other page idk
-    this.fetchArtisan(this._id)
+    this.fetchArtisan(this._id);
   },
   computed: {
     ...mapGetters([
-      'artisan'
-    ]),
+      "artisan"
+    ])
   },
   methods: {
     ...mapActions([
-      'fetchArtisan'
-    ]),
-  },
-}
+      "fetchArtisan"
+    ])
+  }
+};
 </script>
 
 <style scoped>

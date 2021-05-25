@@ -25,7 +25,7 @@
               <hr>
               <p class="font-roboto font-light text-base">товаров: {{cartCount}}</p>
               <p class="font-yeseva text-xl mr-5">итог: {{cartTotalPrice}}₽</p>
-              <button class="cvrsebtn">перейти к оплате</button>
+              <button class="cvrsebtn" type="submit" @click="pushOrders">перейти к оплате</button>
             </div>
           </template>
           <template v-else>
@@ -54,14 +54,20 @@ export default {
       'cartItems',
       'cartTotalPrice',
       'cartCount',
+      'user_id'
     ]),
   },
   methods: {
-    ...mapActions([]),
+    ...mapActions({
+      createOrders: 'createOrders',
+    }),
 
     ...mapMutations([
       'clearCart'
-    ])
+    ]),
+    pushOrders() {
+      this.createOrders(this.user_id);
+    }
   }
 }
 </script>

@@ -8,29 +8,29 @@
         <section id="product-header">
           <div class="container flex flex-col mx-60 mt-10">
             <p class="font-yeseva text-4xl">{{ product.title }}</p>
-            <router-link :to="{path: `/categories/${this.product.category_id._id}`}">
-              <p class="font-roboto font-bold text-base">{{ product.category_id.cat_name }}</p>
+            <router-link :to="{path: `/categories/${product.category_id._id}`}">
+              <p class="font-roboto font-bold text-base">{{ this.product.category_id.cat_name }}</p>
             </router-link>
           </div>
         </section>
         <section id="product-body">
           <div class="mx-60">
             <div class="flex flex-none flex-row">
-              <img class="main-image" :src="product.mainImage"
-                   v-bind:style="[product.available ? {'border': '0 black'} : {'filter': 'grayscale(100)'}]"
+              <img class="main-image" :src="this.product.mainImage"
+                   v-bind:style="[this.product.available ? {'border': '0 black'} : {'filter': 'grayscale(100)'}]"
                    alt="">
               <div class="flex flex-col flex-none w-1/3 mx-5" v-cloak>
-                <router-link :to="{path: `/artisans/${product.artisan_id._id}`}">
+                <router-link :to="{path: `/artisans/${this.product.artisan_id._id}`}">
                   <artisan-preview
                     :id="product.artisan_id._id"
                     :name="product.artisan_id.name"
                     :avatar="product.artisan_id.avatar"
                   />
                 </router-link>
-                <p class="font-roboto font-light text-base text-justify">{{ product.description }}</p>
+                <p class="font-roboto font-light text-base text-justify">{{ this.product.description }}</p>
               </div>
               <div class="flex flex-none flex-col">
-                <p class="font-roboto font-bold text-base mb-2">в наличии: {{ product.in_stock }}</p>
+                <p class="font-roboto font-bold text-base mb-2">в наличии: {{ this.product.in_stock }}</p>
                 <button class="cvrsebtn" @click="addToCart(product)" v-if="!inCart">
                   добавить в корзину
                 </button>
@@ -41,7 +41,7 @@
             </div>
             <div class="gallery" v-cloak>
               <enlargeable-image
-                v-for="image in product.images" v-bind:key="image"
+                v-for="image in this.product.images" v-bind:key="image"
                 :src="image" :src_large="image" />
             </div>
           </div>
@@ -49,7 +49,7 @@
         <section id="product-reviews">
           <div class="container flex flex-col mx-60 mt-10">
             <p class="font-yeseva text-2xl">отзывы о товаре</p>
-            <review-card v-for="review in product.reviews" v-bind:key="review"
+            <review-card v-for="review in this.product.reviews" v-bind:key="review"
                          :review_body="review.review_body"
                          :review_rating="review.review_rating"
             />
@@ -90,10 +90,13 @@ export default {
   },
   computed: {
     ...mapGetters([
-      "product",
       "cartItems"
     ]),
+    ...mapGetters({
+      product: "product"
+    }),
     cartItemsIds: ({ cartItems }) => cartItems.map(({ _id }) => _id),
+
     inCart() {
       return this.cartItemsIds.includes(this.product._id);
     },

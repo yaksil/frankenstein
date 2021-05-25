@@ -16,4 +16,12 @@ export const columns = [
   { key: 'available', name: 'доступен' },
 ]
 
-export const actions = []
+export const actions = [
+  {
+    bg: 'red',
+    color: 'white',
+    label: 'Удалить',
+    emit: 'onDelete',
+    actionKey: '_id',
+  },
+]

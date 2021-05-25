@@ -8,7 +8,7 @@
         <p class="text-3xl font-yeseva">
           Страница не найдена!
         </p>
-        <router-link to="/">
+        <router-link to="/home">
           <p class="text-xl font-roboto font-light hover:bg-cvrse-red">вернуться на главную...</p>
         </router-link>
       </div>
