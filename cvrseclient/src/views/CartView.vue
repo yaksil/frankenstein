@@ -1,7 +1,7 @@
 <template>
   <div class="cart-view">
     <section id="header">
-      <cvrse-header/>
+      <cvrse-header />
     </section>
     <section id="page">
       <div class="flex flex-row flex-nowrap mx-60 mt-10">
@@ -14,17 +14,17 @@
                     :key="key">
                   <router-link :to="{path: `/products/${item._id}`}">
                     <product-list-preview
-                        v-bind:key="key"
-                        :_id="item._id"
-                        :main-image="item.mainImage"
-                        :price="item.price"
-                        :title="item.title"/>
+                      v-bind:key="key"
+                      :_id="item._id"
+                      :main-image="item.mainImage"
+                      :price="item.price"
+                      :title="item.title" />
                   </router-link>
                 </li>
               </ul>
               <hr>
-              <p class="font-roboto font-light text-base">товаров: {{cartCount}}</p>
-              <p class="font-yeseva text-xl mr-5">итог: {{cartTotalPrice}}₽</p>
+              <p class="font-roboto font-light text-base">товаров: {{ cartCount }}</p>
+              <p class="font-yeseva text-xl mr-5">итог: {{ cartTotalPrice }}₽</p>
               <button class="cvrsebtn" type="submit" @click="pushOrders">перейти к оплате</button>
             </div>
           </template>
@@ -35,7 +35,7 @@
       </div>
     </section>
     <section id="footer">
-      <cvrse-footer class="cvrsefooter"/>
+      <cvrse-footer class="cvrsefooter" />
     </section>
   </div>
 </template>
@@ -43,33 +43,47 @@
 <script>
 import CvrseHeader from "@/layouts/cvrse-header";
 import CvrseFooter from "@/layouts/cvrse-footer";
-import {mapGetters, mapActions, mapMutations} from 'vuex';
+import { mapGetters, mapActions, mapMutations } from "vuex";
 import ProductListPreview from "@/layouts/product-list-preview";
+import axios from "axios";
 
 export default {
   name: "CartView",
-  components: {ProductListPreview, CvrseFooter, CvrseHeader},
+  components: { ProductListPreview, CvrseFooter, CvrseHeader },
   computed: {
     ...mapGetters([
-      'cartItems',
-      'cartTotalPrice',
-      'cartCount',
-      'user_id'
-    ]),
+      "cartItems",
+      "cartTotalPrice",
+      "cartCount",
+      "user_id",
+      "user",
+    ])
   },
   methods: {
     ...mapActions({
-      createOrders: 'createOrders',
+      fetchUser: 'fetchUser',
     }),
 
     ...mapMutations([
-      'clearCart'
+      "clearCart"
     ]),
-    pushOrders() {
-      this.createOrders(this.user_id);
+    async pushOrders() {
+      await this.fetchUser(this.user_id);
+      /// вот здесь вот функци_ онал
+      await this.cartItems.forEach(itemInCart => {
+        const res = axios.post("http://localhost:4545/api/orders", {
+          user_id: this.user_id,
+          namesake: this.user.fullname,
+          state: 'active',
+          item: itemInCart._id,
+          shipping: '',
+          total: itemInCart.price
+        });
+        console.log(res);
+      })
     }
   }
-}
+};
 </script>
 
 <style scoped>

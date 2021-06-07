@@ -47,6 +47,6 @@ export const schema = {
 
 export const defaultForm = {
   cat_name: '',
-  // product_inventory: [],
+  product_inventory: [],
   cat_desc: '',
 }

@@ -1,6 +1,4 @@
 import { sum } from "ramda";
-import axios from "axios";
-// import axios from "axios";
 
 /**
  * Vuex State Manager pattern
@@ -29,23 +27,7 @@ const mutations = {
   },
 };
 
-const actions = {
-  async createOrders(state, user_id) {
-    try {
-      const res = await axios.post("http://localhost:4545/api/orders/", {
-        user_id: user_id,
-        namesake: "",
-        state: "active",
-        items: state.cartItems,
-        shipping: "",
-        total: "",
-      });
-      console.log(res);
-    } catch (err) {
-      console.log(err);
-    }
-  },
-};
+const actions = {};
 
 const getters = {
   cartTotalPrice: ({ cartItems }) => sum(cartItems.map((item) => item.price)),

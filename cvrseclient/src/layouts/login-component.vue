@@ -20,7 +20,7 @@
 
 <script>
 import CvrseFooter from "@/layouts/cvrse-footer";
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 
 export default {
   name: "login-component",
@@ -31,16 +31,22 @@ export default {
       password: ""
     };
   },
-  computed: {},
+  computed: {
+    ...mapGetters([
+      'isLogged'
+    ])
+  },
   methods: {
     ...mapActions([
       "login"
     ]),
-    activateLogin() {
+    async activateLogin() {
       let email = this.email;
       let password = this.password;
-      this.$store.dispatch('login', { email, password })
-        .then(() => this.$router.push("/home")).catch(err => console.log(err));
+      await this.$store.dispatch('login', { email, password });
+      if(this.isLogged) {
+        await this.$router.push("/home")
+      }
     }
   },
   props: {}

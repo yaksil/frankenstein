@@ -80,6 +80,14 @@ const routes = [
     component: () =>
       import(/* webpackChunk "Category-view" */ "@/views/CategoryView"),
   },
+  {
+    path: "/my-personal",
+    name: "personal-data",
+    component: () =>
+      import(
+        /* webpackChunkName: "Personal Data Form" */ "@/views/EditPersonalData"
+      ),
+  },
 ];
 
 const router = new VueRouter({

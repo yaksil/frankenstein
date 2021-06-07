@@ -43,6 +43,7 @@ module.exports = {
       if (foundToken) {
         await Token.findByIdAndUpdate(foundToken._id, { token: refreshToken })
         return res.status(200).send({
+          authStatus: true,
           user_id: foundUser._id,
           email: foundUser.email,
           accessToken,
@@ -54,6 +55,7 @@ module.exports = {
       await item.save()
 
       return res.status(200).send({
+        authStatus: true,
         user_id: foundUser._id,
         email: foundUser.email,
         accessToken,
