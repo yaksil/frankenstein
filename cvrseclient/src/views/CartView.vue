@@ -26,6 +26,7 @@
               <p class="font-roboto font-light text-base">товаров: {{ cartCount }}</p>
               <p class="font-yeseva text-xl mr-5">итог: {{ cartTotalPrice }}₽</p>
               <button class="cvrsebtn" type="submit" @click="pushOrders">перейти к оплате</button>
+              <button class="deleteButton" type="submit" @click="clearCart">удалить товары из корзины</button>
             </div>
           </template>
           <template v-else>
@@ -75,8 +76,10 @@ export default {
           user_id: this.user_id,
           namesake: this.user.fullname,
           state: 'active',
+          artisan_id: itemInCart.artisan_id,
           item: itemInCart._id,
-          shipping: '',
+          item_name: itemInCart.title,
+          shipping: this.user.mail_address,
           total: itemInCart.price
         });
         console.log(res);
@@ -100,6 +103,12 @@ export default {
     @apply container border-2 border-gray-900 rounded-2xl
   }
 
+  .deleteButton {
+    @apply font-yeseva text-white
+    bg-cvrse-red border-none rounded-full py-1.5 px-5
+    transition delay-100 hover:bg-cvrse-green
+    ml-5
+  }
 }
 
 </style>

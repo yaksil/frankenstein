@@ -14,10 +14,10 @@
                 <img class="img-avatar" :src="this.user.artisan_id.avatar" alt="">
                 <p class="font-yeseva text-3xl mt-5">{{ this.user.artisan_id.name }}</p>
               </router-link>
-              <router-link to="/my-products">
+              <router-link to="/artisan-products">
                 <p class="text-xl font-roboto italic font-light hover:bg-cvrse-green my-2">Мои товары</p>
               </router-link>
-              <router-link to="/my-orders">
+              <router-link to="/artisan-orders">
                 <p class="text-xl font-roboto italic font-light hover:bg-cvrse-red">Мои заказы</p>
               </router-link>
             </div>
@@ -27,8 +27,12 @@
               <p class="font-roboto font-light italic text-base mb-5">Пользователь</p>
               <p class="font-roboto font-bold text-base my-1">email: {{ this.user.email }}</p>
               <p class="font-roboto font-bold text-base my-1">номер телефона: {{ this.user.phone }}</p>
+              <p class="font-roboto font-bold text-base my-1">адрес для заказов: {{this.user.mail_address}}</p>
               <router-link to="/my-personal">
                 <p class="text-xl font-roboto italic font-light mt-2 hover:bg-cvrse-red">Редактировать данные</p>
+              </router-link>
+              <router-link to="/my-orders">
+                <p class="text-xl font-roboto italic font-light hover:bg-cvrse-red">Мои заказы</p>
               </router-link>
             </div>
           </section>

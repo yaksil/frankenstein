@@ -25,6 +25,15 @@ const order = new mongoose.Schema({
     ref: 'Product',
   },
 
+  item_name: {
+    type: String,
+  },
+
+  artisan_id: {
+    type: String,
+    ref: 'Artisan',
+  },
+
   // shipping info b like
   shipping: {
     type: String,

@@ -88,6 +88,22 @@ const routes = [
         /* webpackChunkName: "Personal Data Form" */ "@/views/EditPersonalData"
       ),
   },
+  {
+    path: "/artisan-orders",
+    name: "artisan-orders-data",
+    component: () =>
+      import(
+        /* webpackChunkName: "Artisan Orders View" */ "@/views/ArtisanOrdersView"
+      ),
+  },
+  {
+    path: "/artisan-products",
+    name: "artisan-products-data",
+    component: () =>
+      import(
+        /* webpackChunkName: "Artisan Products View" */ "@/views/ArtisanProductsView"
+      ),
+  },
 ];
 
 const router = new VueRouter({

@@ -31,12 +31,14 @@
               </div>
               <div class="flex flex-none flex-col">
                 <p class="font-roboto font-bold text-base mb-2">в наличии: {{ this.product.in_stock }}</p>
-                <button class="cvrsebtn" @click="addToCart(product)" v-if="!inCart">
-                  добавить в корзину
-                </button>
-                <button class="cvrsebtn" @click="addToCart(product)" v-else>
-                  убрать из корзины
-                </button>
+                <div v-if="product.available">
+                  <button class="cvrsebtn" @click="addToCart(product)" v-if="!inCart">
+                    добавить в корзину
+                  </button>
+                  <button class="cvrsebtn" @click="addToCart(product)" v-else>
+                    убрать из корзины
+                  </button>
+                </div>
               </div>
             </div>
             <div class="gallery" v-cloak>

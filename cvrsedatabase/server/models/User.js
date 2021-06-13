@@ -13,6 +13,9 @@ const user = new mongoose.Schema({
     type: String,
     default: '',
   },
+  mail_address: {
+    type: String,
+  },
   fullname: {
     type: String,
     default: '',

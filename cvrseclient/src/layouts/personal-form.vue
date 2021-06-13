@@ -24,7 +24,8 @@ export default {
       model: {
         fullname: "",
         email: "",
-        phone: ""
+        phone: "",
+        mail_address: ""
       },
       schema: {
         fields: [
@@ -45,6 +46,12 @@ export default {
             inputType: "text",
             label: "Телефон",
             model: "phone"
+          },
+          {
+            type: "input",
+            inputType: "text",
+            label: "Адрес",
+            model: "mail_address"
           }
         ]
       }
