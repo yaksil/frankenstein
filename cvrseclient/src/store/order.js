@@ -22,15 +22,19 @@ const actions = {
       const res = await axios.get(
         `http://localhost:4545/api/orders/artisan/${artisan_id}`
       );
-      console.log(res);
-      // commit("setOrders");
+      commit("setOrders", res.data);
+      console.log(res.data);
     } catch (e) {
       commit("setOrderError", e);
     }
   },
 };
 
-const getters = {};
+const getters = {
+  order: ({ order }) => order,
+  orders: ({ orders }) => orders,
+  orderError: ({ orderError }) => orderError,
+};
 
 const state = () => ({
   order: {},

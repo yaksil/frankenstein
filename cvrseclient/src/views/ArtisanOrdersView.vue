@@ -9,6 +9,7 @@
         <table-component
           :columns="columns"
           :actions="actions"
+          :data="orders"
         />
       </div>
     </section>
@@ -52,17 +53,17 @@ export default {
 
   }),
   computed: {
-    ...mapGetters([
-      "user",
-      "user_id"
-    ])
+    ...mapGetters({
+      user: 'user',
+      user_id: 'user_id',
+      orders: 'orders'
+    })
   },
   methods: {
     ...mapActions([
       "fetchUser",
       "getOrdersByArtisan"
     ]),
-
   }
 };
 </script>
