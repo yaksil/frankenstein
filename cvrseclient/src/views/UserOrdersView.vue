@@ -29,7 +29,8 @@ export default {
   name: "UserOrdersView",
   components: { TableComponent, CvrseFooter, CvrseHeader },
   mounted() {
-    this.getOrdersByUser("60ac87bff7154364a85f4bb4");
+   // this.getOrdersByUser("60ac87bff7154364a85f4bb4");
+    this.setData();
   },
   data: () => ({
     columns: [
@@ -41,8 +42,16 @@ export default {
         key: "total",
         name: "сумма"
       },
+    ],
+    actions: [
+      {
+        bg: "red",
+        color: "white",
+        label: "Отменить",
+        emit: "onDelete",
+        actionKey: "_id"
+      }
     ]
-
   }),
   computed: {
     ...mapGetters({
@@ -56,6 +65,10 @@ export default {
       "fetchUser",
       "getOrdersByUser"
     ]),
+    setData() {
+      this.fetchUser(this.user_id);
+      this.getOrdersByUser(this.user_id);
+    }
   }
 };
 </script>

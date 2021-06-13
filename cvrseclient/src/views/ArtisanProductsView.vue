@@ -10,7 +10,6 @@
           :columns="columns"
           :actions="actions"
           :data="items"
-
         />
       </div>
     </section>
@@ -32,20 +31,16 @@ export default {
   data: () => ({
     columns: [
       {
-        key: "item_name",
-        name: "название товара"
+        key: 'title',
+        name: 'название продукта'
       },
       {
-        key: "total",
-        name: "сумма"
+        key: 'in_stock',
+        name: 'количество'
       },
       {
-        key: "namesake",
-        name: "имя получателя"
-      },
-      {
-        key: "shipping",
-        name: "адрес получателя"
+        key: 'price',
+        name: 'цена'
       }
     ],
     actions: [
@@ -55,20 +50,26 @@ export default {
         label: "Удалить",
         emit: "onDelete",
         actionKey: "_id"
+      },
+      {
+        bg: "yellow",
+        color: "white",
+        label: "Редактировать",
+        emit: "onEdit",
+        actionKey: "_id"
       }
     ]
   }),
   computed: {
     ...mapGetters({
-      items: `products`,
-      user: "user",
-      user_id: "user_id"
+      user_id: "user_id",
+      user: 'user'
     })
   },
   methods: {
     ...mapActions({
-      fetchUser: "fetchUser",
-      fetchItems: "fetchProducts"
+      fetchUser: 'fetchUser',
+      fetchArtisan: 'fetchArtisan'
     })
   }
 };
