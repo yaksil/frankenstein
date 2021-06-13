@@ -9,7 +9,6 @@
         <table-component
           :columns="columns"
           :actions="actions"
-          :data="orders"
         />
       </div>
     </section>
@@ -28,6 +27,9 @@ import { mapActions, mapGetters } from "vuex";
 export default {
   name: "ArtisanOrdersView",
   components: { TableComponent, CvrseFooter, CvrseHeader },
+  mounted() {
+    this.getOrdersByArtisan("609ed4202e9d5026d8b72e42");
+  },
   data: () => ({
     columns: [
       {
@@ -46,7 +48,7 @@ export default {
         key: "shipping",
         name: "адрес получателя"
       }
-    ],
+    ]
 
   }),
   computed: {
@@ -58,7 +60,9 @@ export default {
   methods: {
     ...mapActions([
       "fetchUser",
-    ])
+      "getOrdersByArtisan"
+    ]),
+
   }
 };
 </script>

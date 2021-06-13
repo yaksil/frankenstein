@@ -1,4 +1,4 @@
-import { getOrder, getOrders } from "@/services/order.service";
+import axios from "axios";
 
 /**
  * Vuex State Manager pattern
@@ -19,7 +19,11 @@ const mutations = {
 const actions = {
   async getOrdersByArtisan({ commit }, artisan_id) {
     try {
-      commit("setOrders");
+      const res = await axios.get(
+        `http://localhost:4545/api/orders/artisan/${artisan_id}`
+      );
+      console.log(res);
+      // commit("setOrders");
     } catch (e) {
       commit("setOrderError", e);
     }
