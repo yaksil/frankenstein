@@ -1,16 +1,15 @@
 <template>
-  <div class="artisan-products">
+  <div class="user-orders-view">
     <section id="header">
       <cvrse-header />
     </section>
     <section id="page">
       <div class="mx-40 mt-10">
-        <p class="font-yeseva text-5xl mb-5">{{ user.fullname }}: товары</p>
+        <p class="font-yeseva text-5xl mb-5">{{ user.fullname }}: заказы</p>
         <table-component
           :columns="columns"
           :actions="actions"
-          :data="items"
-
+          :data="orders"
         />
       </div>
     </section>
@@ -27,8 +26,11 @@ import TableComponent from "@/layouts/table-component";
 import { mapActions, mapGetters } from "vuex";
 
 export default {
-  name: "ArtisanProductsView",
+  name: "UserOrdersView",
   components: { TableComponent, CvrseFooter, CvrseHeader },
+  mounted() {
+    this.getOrdersByUser("60ac87bff7154364a85f4bb4");
+  },
   data: () => ({
     columns: [
       {
@@ -39,43 +41,25 @@ export default {
         key: "total",
         name: "сумма"
       },
-      {
-        key: "namesake",
-        name: "имя получателя"
-      },
-      {
-        key: "shipping",
-        name: "адрес получателя"
-      }
-    ],
-    actions: [
-      {
-        bg: "red",
-        color: "white",
-        label: "Удалить",
-        emit: "onDelete",
-        actionKey: "_id"
-      }
     ]
+
   }),
   computed: {
     ...mapGetters({
-      items: `products`,
-      user: "user",
-      user_id: "user_id"
+      user: 'user',
+      user_id: 'user_id',
+      orders: 'orders'
     })
   },
   methods: {
-    ...mapActions({
-      fetchUser: "fetchUser",
-      fetchItems: "fetchProducts"
-    })
+    ...mapActions([
+      "fetchUser",
+      "getOrdersByUser"
+    ]),
   }
 };
 </script>
 
 <style scoped>
-.cvrsefooter {
-  position: absolute;
-}
+
 </style>

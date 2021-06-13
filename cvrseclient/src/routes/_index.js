@@ -104,6 +104,14 @@ const routes = [
         /* webpackChunkName: "Artisan Products View" */ "@/views/ArtisanProductsView"
       ),
   },
+  {
+    path: "/my-orders",
+    name: "user-orders",
+    component: () =>
+      import(
+        /* webpackChunkName: "User Orders View" */ "@/views/UserOrdersView"
+      ),
+  },
 ];
 
 const router = new VueRouter({

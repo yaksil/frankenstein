@@ -28,6 +28,17 @@ const actions = {
       commit("setOrderError", e);
     }
   },
+  async getOrdersByUser({ commit }, user_id) {
+    try {
+      const res = await axios.get(
+        `http://localhost:4545/api/orders/user/${user_id}`
+      );
+      commit("setOrders", res.data);
+      console.log(res.data);
+    } catch (e) {
+      commit("setOrderError", e);
+    }
+  },
 };
 
 const getters = {
