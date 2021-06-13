@@ -9,6 +9,7 @@
         <table-component
           :columns="columns"
           :actions="actions"
+          :data="orders"
         />
       </div>
     </section>

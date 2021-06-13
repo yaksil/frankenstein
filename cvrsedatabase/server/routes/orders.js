@@ -11,5 +11,7 @@ router.route('/:id').get(order.getById)
 router.route('/').post(order.create)
 router.route('/:id').put(order.updateById)
 router.route('/:id').delete(order.delete)
+router.route('/artisan/:artisan_id').get(order.getByArtisan)
+router.route('/user/:user_id').get(order.getByUser)
 
 module.exports = router
